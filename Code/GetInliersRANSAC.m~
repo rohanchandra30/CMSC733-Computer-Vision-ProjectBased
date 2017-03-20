@@ -13,7 +13,6 @@ n=0;
 msize = size(x1,1);
 pts1 = zeros(8,2);
 pts2 = zeros(8,2);
-
 for i=1:1000 
   idx = randperm(msize);
 % Choose 8 correspondences, x?1 and x?2 randomly 
@@ -26,7 +25,7 @@ for i=1:1000
   
   S = [];
   for j=1:msize
-    if constraint(x2(j,:), F, x1(j,:)) < eps 
+    if constraint(x2, F, x1) < eps 
         S = [S; j];
     end
   end

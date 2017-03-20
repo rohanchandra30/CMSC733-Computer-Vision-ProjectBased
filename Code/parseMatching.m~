@@ -1,0 +1,23 @@
+function matches = parseMatching(Nimages, matchdata, i) 
+  
+  nFeatures = matchdata(1,2);
+  fpoints = cell(nFeatures, Nimages);
+    
+  for row = 2:nFeatures+1
+   fpoints{row,i} = [matchdata(row,5) matchdata(row,6)];
+   n_f_m = matchdata(row,1);
+   ref = 7;
+   for j = 1:n_f_m-1
+          im = matchdata(row,ref);
+          fpoints{row,im} = [matchdata(row,ref+1) matchdata(row,ref+2)];
+          ref = ref +3;
+   end    
+  end
+  p1 = cell2mat(fpoints(:,i));
+  for j = i+1:Nimages
+        p2 = cellfun(@isempty, fpoints{:,j})  == 0;
+        ps1 = p1(~arrayfun(@isempty, p2));
+        ps2 = p2(~arrayfun(@isempty, p2));
+        matches{j,1} = [ps1, ps2];
+   end        
+end  

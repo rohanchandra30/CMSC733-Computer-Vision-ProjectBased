@@ -7,4 +7,15 @@ function E = EssentialMatrixFromFundamentalMatrix(F,K)
 
 %% Your Code goes here
 
+E = K'*F*K;
+
+[U,D,V] = svd(E);
+Corrected_Matrix = [1,0,0;0,1,0;0,0,0];
+
+E = U*Corrected_Matrix*V';
+
+
+
+
+
 end

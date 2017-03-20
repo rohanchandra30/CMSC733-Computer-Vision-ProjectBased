@@ -29,5 +29,19 @@ for i = 1:Nimages
    fclose(fileID);  
 end    
 
+% -------------------------------------------------------Rohan's Commit-----------------------------------------------------------------------
+% Testing Part 5
 
+% Dummy F...
+F = ones(3,3);
 
+% K is given...
+K = [568.996140852 0 643.21055941;
+     0 568.988362396 477.982801038;
+     0 0 1];
+
+ 
+ % Part 5
+clc
+E = EssentialMatrixFromFundamentalMatrix(F,K);
+[Cset,Rset] = ExtractCameraPose(E); 

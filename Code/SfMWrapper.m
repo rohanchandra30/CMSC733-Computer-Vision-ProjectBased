@@ -20,13 +20,24 @@ matches{4} = parseMatching(Nimages, matching4, 4);
 matches{5} = parseMatching(Nimages, matching5, 5);
 
 % -------------------------------------------------------Rohan's Commit-----------------------------------------------------------------------
+F = cell(Nimages-1, Nimages);
+idx = cell(Nimages-1, Nimages);
+y1 = cell(Nimages-1, Nimages);
+y2 = cell(Nimages-1, Nimages);
 
 for i=1:Nimages-1
-   for j = i:Nimages
-       [y1,y2,idx] = GetInliersRANSAC(matches{i,1}{i,1},matches{i,1}{j,1});
+   for j = i+1:Nimages
+     if ~isempty(matches{i,1}{j,1})
+       [a1,a2,id,f] = GetInliersRANSAC(matches{i,1}{j,1}(:,1),matches{i,1}{j,1}(:,2));     
+       y1{i,j} = a1;
+       y2{i,j} = a2;
+       idx{i,j} = id;
+       F{i,j} = f;
+     end 
    end    
 end    
 
 % Part 5
-E = EssentialMatrixFromFundamentalMatrix(F,K);
+
+E = EssentialMatrixFromFundamentalMatrix(F{1,2},K);
 [Cset,Rset] = ExtractCameraPose(E); 

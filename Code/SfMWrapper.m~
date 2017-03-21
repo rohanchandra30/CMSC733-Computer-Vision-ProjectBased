@@ -9,22 +9,28 @@ Nimages = 6;
 K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
 %% Load the images and extract matching%%
-
-matching = cell(Nimages, Nimages);
-for i = 1:Nimages
-    %Images(i) = imread(sprintf('%s/%d.jpg',Imagepath, i));
-    filename = fullfile(Imagepath,sprintf('matching%d.txt',i));
-    matching{i,1} = importdata(filename); 
-end    
+for i = 1:Nimages-1
+ load(sprintf('matching%d',i));
+end
+matches = cell(Nimages-1,1);
+matches{1} = parseMatching(Nimages, matching1, 1);
+matches{2} = parseMatching(Nimages, matching2, 2);
+matches{3} = parseMatching(Nimages, matching3, 3);
+matches{4} = parseMatching(Nimages, matching4, 4);
+matches{5} = parseMatching(Nimages, matching5, 5);
 
 % -------------------------------------------------------Rohan's Commit-----------------------------------------------------------------------
-% Testing Part 5
+F = cell(Nimages-1, );
+idx = cell(Nimages-1);
+y1 = cell(Nimages-1);
+y2 = cell(Nimages-1);
+for i=1:Nimages-1
+   for j = i+1:Nimages
+       [y1{i,j},y2{i,j},idx{i,j}, F{i,j}] = GetInliersRANSAC(matches{i,1}{j,1}(:,1),matches{i,1}{j,1}(:,2));
+       
+   end    
+end    
 
-% Dummy F...
-F = ones(3,3);
-
- 
- % Part 5
-clc
+% Part 5
 E = EssentialMatrixFromFundamentalMatrix(F,K);
 [Cset,Rset] = ExtractCameraPose(E); 

@@ -10,7 +10,7 @@ function F = EstimateFundamentalMatrix(X1,X2)
     x1 = X1(i,1);
     y1 = X1(i,2);
     xx = X2(i,1);
-    xy = X3(i,2);
+    yy = X2(i,2);
     A(i,:) = [x1*xx x1*yy x1 y1*xx y1*yy y1 xx yy 1]; 
  end
  

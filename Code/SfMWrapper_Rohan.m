@@ -1,9 +1,11 @@
 %% Good Luck, Have fun!
 clc
 clear all
+close all
 
 Nimages = 6;
-
+I1 = im2double(imread('../Data/1.jpg'));
+I2 = im2double(imread('../Data/2.jpg'));
 %  Taken from calibration.txt %%
 K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
@@ -49,7 +51,6 @@ end
 %% % Part 5
 
 E = EssentialMatrixFromFundamentalMatrix(F{1,2},K);
-
 [Cset,Rset] = ExtractCameraPose(E);
 
 
@@ -58,11 +59,10 @@ E = EssentialMatrixFromFundamentalMatrix(F{1,2},K);
 
 x1 = points{1,2}(:,1:2);
 x2 = points{1,2}(:,3:4);
+dispMatchedFeatures(I1,I2,x1,x2, 'montage');
 
 for i = 1:4
-    
     Xset{i} = LinearTriangulation(K, zeros(3,1), eye(3), Cset{i}, Rset{i}, x1, x2) ;
-    
 end
 
 [C, R, X] = DisambiguateCameraPose(Cset, Rset, Xset);

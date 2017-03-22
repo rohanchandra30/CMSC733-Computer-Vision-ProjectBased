@@ -29,19 +29,20 @@ for i=1:1000
   
   S = [];
   for j=1:msize
-    if constraint(x2(j,:), f, x1(j,:)) < 1 
+    if constraint(x2(j,:), f, x1(j,:)) < 1e-3
         S = [S; j];
+        constraint(x2(j,:), f, x1(j,:))
     end
   end
   
   if n < size(S,1) 
     n = size(S,1);
-    idx = S; 
+    index = S; 
     F = f;
   end
 end
-y1 = x1(idx,:);
-y2 = x2(idx,:);
+y1 = x1(index,:);
+y2 = x2(index,:);
 end
 
 function f = constraint(x2, F, x1)

@@ -20,5 +20,8 @@ function F = EstimateFundamentalMatrix(X1,X2)
  F = F./F(3,3);
  [A,B,C] = svd(F);
  B(3,3) = 0;
+ B = B./B(1,1);
  F = A*B*C;
+ 
+ 
 end

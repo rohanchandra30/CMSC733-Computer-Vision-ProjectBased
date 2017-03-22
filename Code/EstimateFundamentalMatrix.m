@@ -11,7 +11,7 @@ function F = EstimateFundamentalMatrix(X1,X2)
     y1 = X1(i,2);
     xx = X2(i,1);
     yy = X2(i,2);
-    A(i,:) = [x1*xx x1*yy x1 y1*xx y1*yy y1 xx yy 1]; 
+    A(i,:) = [x1*xx xx*y1 xx yy*x1 y1*yy yy x1 y1 1]; 
  end
  
  [U S V] = svd(A);

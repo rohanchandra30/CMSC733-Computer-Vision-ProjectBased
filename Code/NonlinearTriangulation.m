@@ -9,5 +9,30 @@ function X = NonlinearTriangulation(K, C1, R1, C2, R2, x1, x2, X0)
 
 %% Your code goes here
 
+
+P1 = [R1,C1];
+P2 = [R2,C2];
+
+X_homo = [X0,ones(length(X0),1)];
+
+for i = 1:2*length(X0)
+    
+   fun1(2*i-1) =  x1(i,1) - (P1(1,:)*X_homo({i}))/((P1(3,:)*X_homo{i}));
+   fun1(2*i) = x1(i,2) - (P1(2,:)*X_homo{i})/(P1(3,:)*X_homo{i});
+end
+
+
+for i = 1:2*length(X0)
+    
+   fun2(2*i-1) =  x2(i,1) - (P2(1,:)*X_homo{i})/(P2(3,:)*X_homo{i});
+   fun2(2*i) = x2(i,2) - (P2(2,:)*X_homo{i})/(P2(3,:)*X_homo{i});
+end
+
+
+fun = [fun1;fun2];
+
+X = lsqnonlin(fun,X0);
+
+
 end
 

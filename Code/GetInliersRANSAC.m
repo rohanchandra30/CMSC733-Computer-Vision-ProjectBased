@@ -8,8 +8,8 @@ function [y1,y2,idx,F] = GetInliersRANSAC(x1,x2)
 
 F = [];
 %% Your Code goes here
-x1 = cell2mat(x1);
-x2 = cell2mat(x2);
+% x1 = cell2mat(x1);
+% x2 = cell2mat(x2);
 
 n=0;  
 
@@ -29,7 +29,7 @@ for i=1:1000
   
   S = [];
   for j=1:msize
-    if constraint(x2(j,:), f, x1(j,:)) < eps 
+    if constraint(x2(j,:), f, x1(j,:)) < 1 
         S = [S; j];
     end
   end
@@ -40,8 +40,8 @@ for i=1:1000
     F = f;
   end
 end
-y1 = x1(idx);
-y2 = x2(idx);
+y1 = x1(idx,:);
+y2 = x2(idx,:);
 end
 
 function f = constraint(x2, F, x1)

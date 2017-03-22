@@ -21,7 +21,7 @@ for i = 1:4
     new_count = 0;
     for j = 1:length(Xset{i})
         
-        if Rset{i}(3,:)*(Xset{i}{j}(1:3) - Cset{i})>0
+        if Rset{i}(3,:)*(Xset{i}(j,:)' - Cset{i})>0
            new_count = new_count+1;
         end 
         

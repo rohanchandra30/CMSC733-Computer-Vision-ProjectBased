@@ -17,4 +17,8 @@ function F = EstimateFundamentalMatrix(X1,X2)
  [U S V] = svd(A);
  F = V(:,9);
  F = reshape(F,3,3)';
+ F = F./F(3,3);
+ [A,B,C] = svd(F);
+ B(3,3) = 0;
+ F = A*B*C;
 end

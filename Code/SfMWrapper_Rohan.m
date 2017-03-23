@@ -31,11 +31,20 @@ end
 
 [C, R, X] = DisambiguateCameraPose(Cset, Rset, Xset);
 
-%X_opt = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
+[t1, t2] = testX(X, zeros(3, 1), eye(3), R, C, K);
+
+figure 
+ imshow(I2); hold on;
+ plot(x2(:,1), x2(:,2), 'r.'); plot( t2(:,1), t2(:,2), 'b.');
+ %hold off;
+ 
+X_opt = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
+
 Cset = cell(Nimages-1, 1);
 Rset = cell(Nimages-1, 1);
 Rset{1,1} = R;
 Cset{1,1} = C;
+
 for i = 2:Nimages-1
     x1 = Points{i,i+1}(:,1:2);
     x2 = Points{i,i+1}(:,3:4);

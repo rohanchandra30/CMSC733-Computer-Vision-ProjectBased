@@ -10,18 +10,21 @@ function X = NonlinearTriangulation(K, C1, R1, C2, R2, x1, x2, X0)
 %% Your code goes here
 
 
-P1 = [R1,C1];
-P2 = [R2,C2];
+P1 = K* [R1 -R1*C1];
+P2 = K* [R2 -R2*C2];
+% P1 = [R1 C1];
+% P2 = [R2 C2];
+%opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'TolX', 1e-64, 'TolFun', 1e-64, 'MaxFunEvals', 1e64, 'MaxIter', 1e64, 'Display', 'iter');
 
-
-X = lsqnonlin(@(X)func(P1, P2, x1, x2, X),X0);
+opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'MaxIter', 1e3, 'Display', 'iter')
+[X, ~] = lsqnonlin(@(X) func(X, P1, P2, x1, x2), X0, [], [], opts);
 
 
 end
 
 
 
-function fun = func(P1, P2, x1, x2, X)
+function [fun] = func(X, P1, P2, x1, x2)
 
 
 X_homo = [X,ones(length(X),1)];
@@ -39,9 +42,6 @@ for i = 1:length(X)
     fun2(2*i) = x2(i,2) - (P2(2,:)*X_homo(i,:)')/(P2(3,:)*X_homo(i,:)');
 end
 
-
 fun = [fun1';fun2'];
-
-
 
 end

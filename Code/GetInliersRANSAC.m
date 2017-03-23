@@ -31,7 +31,6 @@ for i=1:1000
   for j=1:msize
     if constraint(x2(j,:), f, x1(j,:)) < 8e-2
         S = [S; j];
-        constraint(x2(j,:), f, x1(j,:))
     end
   end
   

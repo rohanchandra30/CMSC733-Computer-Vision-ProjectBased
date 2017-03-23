@@ -16,8 +16,8 @@ function [C, R] = LinearPnP(X, x, K)
      P = mldivide(x_norm,X);
      R = P(:, 1:3);
      T = P(:, 4);
-     [U,D,V] = lu(R);
-     R = U*V';
+     [U,D,V] = svd(R);
+      R = U*V';
      if det(R) == -1
       R = R.* -1;
      end

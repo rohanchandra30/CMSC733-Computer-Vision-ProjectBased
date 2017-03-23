@@ -10,8 +10,11 @@ function [X] = LinearTriangulation(K, C1, R1, C2, R2, x1, x2)
 %% Your Code goes here
 
 
-P = [R1,C1];
-P_dash = [R2,C2];
+P = K *[R1 (R1*C1).*-1 ];
+P_dash = K *[R2 (R2*C2).*-1 ];
+
+% P = [R1 C1];
+% P_dash = [R2 C2];
 
 % x1 goes with P. x2 goes with P_dash
 for i = 1:size(x1,1)

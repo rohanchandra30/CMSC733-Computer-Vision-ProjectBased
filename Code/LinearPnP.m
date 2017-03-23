@@ -10,7 +10,7 @@ function [C, R] = LinearPnP(X, x, K)
   N = size(x,1);
   
   if N >= 6
-     X = [X ones(N,1)];
+     X = [X ones(N,1)]; 
      x = [x ones(N,1)]';
      x_norm = K\x;
      P = mldivide(x_norm,X);

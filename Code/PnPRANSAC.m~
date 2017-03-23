@@ -28,7 +28,7 @@ ptsx = zeros(6,2);
   
    S = [];
    for j=1:msize
-     T = (r*c).* -1;  
+     T = -1*r'*c;  
      P = K*[r T];  
      if compute_error(P, x(j,:), X(j,:)) < 8e-2
         S = [S; j];

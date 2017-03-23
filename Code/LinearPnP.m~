@@ -21,7 +21,8 @@ function [C, R] = LinearPnP(X, x, K)
      if det(R) == -1
       R = R.* -1;
      end
-     C = (R\T).* -1;
+     C = (R')\T;
+     C = C.*-1;
   else
     fprintf('At least 6 correspondenses are required\n');
     C = zeros(3,1);

@@ -1,4 +1,4 @@
-function matches = parseMatching(Nimages, matchdata, i) 
+function [matches, fpoints] = parseMatching(Nimages, matchdata, i) 
   
   nFeatures = matchdata(1,2);
   fpoints = cell(nFeatures, Nimages);

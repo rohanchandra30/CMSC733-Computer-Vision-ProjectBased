@@ -13,11 +13,18 @@ function [C, R] = LinearPnP(X, x, K)
      X = [X ones(N,1)];
      x = [x ones(N,1)]';
      x_norm = K\x;
-     P = mldivide(x_norm,X);
+     A = [];
+     for i = 1:6
+         A = [ A;
+              -X(i,1), -X(i,2), -X(i,3), -1, 0, 0, 0, 0, x_norm(i,1)*X(i,1), x_norm(i,1)*X(i,2), x_norm(i,1)*X(i,3), x_norm(i,1);
+              0, 0, 0, 0, -X(i,1), -X(i,2), -X(i,3), -1, x_norm(i,2)*X(i,1) x_norm(i,2)*X(i,2) x_norm(i,2)*X(i,3) x_norm(i,2)];
+     end    
+     [U, S, V] = svd(A);
+     P = reshape(V, 3,4);
      R = P(:, 1:3);
      T = P(:, 4);
      [U,D,V] = svd(R);
-      R = U*V';
+     R = U*V';
      if det(R) == -1
       R = R.* -1;
      end

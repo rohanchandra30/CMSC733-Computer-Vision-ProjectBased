@@ -16,7 +16,7 @@ P2 = K* [R2 -R2*C2];
 % P2 = [R2 C2];
 %opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'TolX', 1e-64, 'TolFun', 1e-64, 'MaxFunEvals', 1e64, 'MaxIter', 1e64, 'Display', 'iter');
 
-opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'MaxIter', 1e3, 'Display', 'iter')
+opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'MaxIter', 1e3, 'Display', 'iter');
 [X, ~] = lsqnonlin(@(X) func(X, P1, P2, x1, x2), X0, [], [], opts);
 
 

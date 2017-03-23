@@ -1,10 +1,8 @@
-function points = get_point_cell(Nimages)
-
-
+function [points, fpoints] = get_point_cell(Nimages)
 
 points = cell(6,6);
 
-matches = get_matches(Nimages);
+[matches, fpoints] = get_matches(Nimages);
 
 [x1,x2] = get_points(matches{1}{2});
 points{1,2} = [x1, x2];

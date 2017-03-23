@@ -10,7 +10,7 @@ K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
 %% Part 4 Calculating point correspondences and Fundamental Matrix
 
-points = get_point_cell(Nimages);
+[points, fpoints] = get_point_cell(Nimages);
 [Points,F] = get_pointsandF_after_RANSAC(points);
 
 x1 = Points{1,2}(:,1:2);
@@ -42,20 +42,32 @@ X_opt = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
 
 Cset = cell(Nimages-1, 1);
 Rset = cell(Nimages-1, 1);
-Rset{1,1} = R;
-Cset{1,1} = C;
+Rset{1,1} = eye(3);
+Cset{1,1} = zeros(3,1);
+Rset{2,1} = R;
+Cset{2,1} = C;
 
 for i = 2:Nimages-1
+    x_n = [];
+    X_n = [];
+    for j = 1:length(x1)
+      in = find(Points{i-1,i+1}(:,1:2) == x1(j,:));
+      if isempty(in)
+         x_n = [x_n; Points{i-1,i+1}(in,3:4)];
+         X_n = [X_n; X_opt(j,:)];
+      end    
+    end
+    
+    [Cnew Rnew] = PnPRANSAC(X_n, x_n, K);
+    [Cnew Rnew] = NonlinearPnP(X_opt, x2, K, Cnew, Rnew);
+    Cset{i+1,1} = C;
+    Rset{i+1,1} = R;
+    
     x1 = Points{i,i+1}(:,1:2);
     x2 = Points{i,i+1}(:,3:4);
     
-    [Cnew Rnew] = PnPRANSAC(X, x2, K);
-    [Cnew Rnew] = NonlinearPnP(X, x2, K, Cnew, Rnew);
-    Cset{i,1} = C;
-    Rset{i,1} = R;
-    
     X_new = LinearTriangulation(K, zeros(3,1), eye(3), Cset{i}, Rset{i}, x1, x2) ;
-    %X_new = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
+    X_new = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
     X = [X; Xnew];
     %V = BuildVisibilityMatrix(traj);
     %[Cset, Rset, X] = BundleAdjustment(Cset, Rset, X, K, traj, V);

@@ -1,6 +1,6 @@
 function [Points,F] = get_pointsandF_after_RANSAC(points)
-
 Nimages = 6;
+
 for i=1:Nimages-1
     for j = 1:Nimages
         if ~isempty(points{i,j})

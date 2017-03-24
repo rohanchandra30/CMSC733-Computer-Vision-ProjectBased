@@ -29,7 +29,7 @@ for i=1:1000
   
   S = [];
   for j=1:msize
-    if constraint(x2(j,:), f, x1(j,:)) < 0.08
+    if constraint(x2(j,:), f, x1(j,:)) < 0.008
         S = [S; j];
     end
   end

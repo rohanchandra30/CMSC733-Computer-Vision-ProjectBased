@@ -3,32 +3,52 @@ clc
 clear all
 close all
 
+load data.mat
+
 Nimages = 6;
 I1 = im2double(imread('../Data/1.jpg'));
 I2 = im2double(imread('../Data/2.jpg'));
 K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
 %% Part 4 Calculating point correspondences and Fundamental Matrix
+% 
 
-
-
-if  ~exist('variables1.mat','file')
+if  ~exist('variables_new.mat','file')  
     [points, fpoints] = get_point_cell(Nimages);
     [Points,F] = get_pointsandF_after_RANSAC(points);
-    save('variables1.mat');
+    save('variables_new.mat');
 else
-    load variables1.mat
+    load variables_new.mat
    
 end
 
 
+
+% These are the points which we got after RANSAC. They cause the non-linear
+% function to hang. This means there is a problem in how we are getting x1
+% and x2
 x1 = Points{1,2}(:,1:2);
 x2 = Points{1,2}(:,3:4);
+
+% These are the x1, x2 from the coursera pipeline. These work. When using
+% these points, comment out line 16.
+% x1 = data.x1;
+% x2 = data.x2;
+
+figure;
+imshow(I1);hold on;
+plot(x1(:,1),x1(:,2),'r.');
+hold off;
+figure;
+imshow(I2);hold on;
+plot(x2(:,1),x2(:,2),'r.');
+hold off;
 % dispMatchedFeatures(I1,I2,x1,x2, 'montage');
 
 %% % Part 5 Calculating Esssential Matrix and the 4 poses of the second Camera
 
-E = EssentialMatrixFromFundamentalMatrix(F{1,2},K);
+F = EstimateFundamentalMatrix(x1, x2);
+E = EssentialMatrixFromFundamentalMatrix(F,K);
 [Cset,Rset] = ExtractCameraPose(E);
 
 
@@ -85,6 +105,7 @@ for i = 2:Nimages-1
     x1 = Points{i,i+1}(:,1:2);
     x2 = Points{i,i+1}(:,3:4);
     
+
     X_new = LinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2) ;
     X_new = NonlinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2, X_new);
 
@@ -92,9 +113,9 @@ for i = 2:Nimages-1
     
     %Building traj
     %traj = cell(N, 1);
+   
+    V = BuildVisibilityMatrix(Nimages, X);
 
-    
-    %V = BuildVisibilityMatrix(Nimages, X);
     %[Cset, Rset, X] = BundleAdjustment(Cset, Rset, X, K, traj, V);
 end
 

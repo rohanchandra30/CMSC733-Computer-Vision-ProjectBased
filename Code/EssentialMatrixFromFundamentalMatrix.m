@@ -14,7 +14,7 @@ Corrected_Matrix = [1,0,0;0,1,0;0,0,0];
 
 E = U*Corrected_Matrix*V';
 
-
+E = E / norm(E);
 
 
 

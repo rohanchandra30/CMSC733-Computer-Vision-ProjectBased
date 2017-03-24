@@ -9,39 +9,27 @@ function X = NonlinearTriangulation(K, C1, R1, C2, R2, x1, x2, X0)
 
 %% Your code goes here
 
+P1 = K*R1*[eye(3) -1.*C1];
+P2 = K*R2*[eye(3) -1.*C2];
 
-P1 = K* [R1 -R1*C1];
-P2 = K* [R2 -R2*C2];
-% P1 = [R1 C1];
-% P2 = [R2 C2];
-%opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'TolX', 1e-64, 'TolFun', 1e-64, 'MaxFunEvals', 1e64, 'MaxIter', 1e64, 'Display', 'iter');
+opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'TolX', 1e-64, 'TolFun', 1e-64, 'MaxFunEvals', 1e64, 'MaxIter', 1e64, 'Display', 'iter');
 
-opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'MaxIter', 1e3, 'Display', 'iter');
-[X, ~] = lsqnonlin(@(X) func(X, P1, P2, x1, x2), X0, [], [], opts);
+X = zeros(size(X0,1),3);
+
+for i=1:length(X0(:,1))
+    X(i,:) = lsqnonlin(@(X) func_triang(X, P1, P2, x1(i,:), x2(i,:)), X0(i,:), [], [], opts);
+end
 
 
 end
 
 
+function f = func_triang(X, P1, P2, x1, x2)
 
-function [fun] = func(X, P1, P2, x1, x2)
+Xhom = [X 1]';
 
-
-X_homo = [X,ones(length(X),1)];
-
-for i = 1:length(X)
-    
-    fun1(2*i-1) =  x1(i,1) - (P1(1,:)*X_homo(i,:)')/((P1(3,:)*X_homo(i,:)'));
-    fun1(2*i) = x1(i,2) - (P1(2,:)*X_homo(i,:)')/(P1(3,:)*X_homo(i,:)');
-end
-
-
-for i = 1:length(X)
-    
-    fun2(2*i-1) =  x2(i,1) - (P2(1,:)*X_homo(i,:)')/(P2(3,:)*X_homo(i,:)');
-    fun2(2*i) = x2(i,2) - (P2(2,:)*X_homo(i,:)')/(P2(3,:)*X_homo(i,:)');
-end
-
-fun = [fun1';fun2'];
-
+f = [(x1(1)-(P1(1,:)*Xhom)/(P1(3,:)*Xhom));
+     (x1(2)-(P1(2,:)*Xhom)/(P1(3,:)*Xhom));
+     (x2(1)-(P2(1,:)*Xhom)/(P2(3,:)*Xhom));
+     (x2(2)-(P2(2,:)*Xhom)/(P2(3,:)*Xhom))];
 end

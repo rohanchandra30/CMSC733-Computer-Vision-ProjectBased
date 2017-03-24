@@ -17,4 +17,20 @@ function [Cset, Rset, Xset] = BundleAdjustment(Cset, Rset, X, K, traj, V)
 
 %% Your code goes here
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

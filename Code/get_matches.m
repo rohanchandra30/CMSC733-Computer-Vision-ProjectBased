@@ -1,10 +1,11 @@
-function [matches, fpoints] = get_matches(Nimages)
+function [matches, fpoint] = get_matches(Nimages)
 
 
 % Load the images and extract matching%%
 for i = 1:Nimages-1
- load(sprintf('matching%d',i));
+ load(sprintf('matching%d.mat',i));
 end
+
 [match, fp]= parseMatching(Nimages, matching1, 1);
 matches{1} = match;
 fpoints{1} = fp; 
@@ -20,6 +21,6 @@ fpoints{4} = fp;
 [match, fp]= parseMatching(Nimages, matching5, 5);
 matches{5} = match;
 fpoints{5} = fp;
-
+fpoint = [fpoints{1}; fpoints{2}; fpoints{3}; fpoints{4}; fpoints{5}];
 matches = matches';
 end

@@ -92,17 +92,21 @@ Xset{2} = X_opt;
 for i = 3:4
 
     id = intersect(indx{i-2, i-1}, find(cellfun(@(x) ~isempty(x), fpoints(:,i))));
-    x_n = cell2mat(fpoints(id,i));
+    x = cell2mat(fpoints(id,i));
+    I = [];
+    X_n = [];
     for m = 1:length(id)
-      I = [I; find(indx{i-2, i-1} == id(1));
+      t = 
+      I = [I; ]
+      
     end
-    X_n = X_set{i}(I>0,:);
-    if length(x_n) < 6
+    X_n = Xset{i-1}(I>0,:);
+    if length(x) < 6
         fprintf('Need atleast 6 correspondenses\n');
         continue;
     end    
-    [Cnew,Rnew] = PnPRANSAC(Xset{i-1}, x_n, K);
-    [Cnew, Rnew] = NonlinearPnP(Xset{i-1}, x_n, K, Cnew, Rnew);
+    [Cnew,Rnew] = PnPRANSAC(X_n, x, K);
+    [Cnew, Rnew] = NonlinearPnP(X_n, x, K, Cnew, Rnew);
 
     Cset{i,1} = Cnew;
     Rset{i,1} = Rnew;

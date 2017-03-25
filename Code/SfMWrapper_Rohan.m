@@ -94,10 +94,12 @@ for i = 3:4
     id = intersect(indx{i-2, i-1}, find(cellfun(@(x) ~isempty(x), fpoints(:,i))));
     x = cell2mat(fpoints(id,i));
     I = [];
+    X_n = [];    
     for m = 1:length(id)
-      I = [I; find(indx{i-2, i-1} == id(m))];
+      t = find(indx{i-2, i-1} == id(m));
+      X_n = [X_n; Xset{i-1}(t,:)];  
     end
-    X_n = Xset{i-1}(I>0,:);
+    
     if length(x) < 6
         fprintf('Need atleast 6 correspondenses\n');
         continue;

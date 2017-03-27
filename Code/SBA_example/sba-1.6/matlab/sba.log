@@ -1,0 +1,3413 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=mex 2016.2.4)  27 MAR 2017 13:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**sba.c ../libsba.a /usr/lib/liblapack.a /usr/lib/libblas.a
+(./sba.c
+This is MeX  Version 1.05  18 XII 1993  (B. Jackowski & M. Ry\'cko)
+
+Overfull \hbox (6.63521pt too wide) in paragraph at lines 1--19
+[]\tenrm /* ///////////////////////////////////////////////////////////////////
+///////////// // // Ma-|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm /
+.etc.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.20 #
+      include <stdio.h>
+? q
+OK, entering \batchmode...
+! You can't use `macro parameter character #' in horizontal mode.
+l.21 #
+      include <stdlib.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.22 #
+      include <stdarg.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.23 #
+      include <math.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.24 #
+      include <string.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.25 #
+      include <ctype.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (0.80145pt too wide) in paragraph at lines 20--26
+[]\tenrm include <stdio.h> in-c-lude <stdlib.h> in-c-lude <stdarg.h> in-c-lude 
+<math.h> in-c-lude <string.h> in-c-lude <ctype.h> |
+
+\hbox(6.88889+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm i
+.\tenrm n
+.\tenrm c
+.\tenrm l
+.etc.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.27 #
+      include <time.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.29 #
+      include "../sba.h"
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.31 #
+      include "mex.h"
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.34 #
+      define DEBUG
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.37 #
+      define _MAX_(A, B)     ((A)>=(B)? (A) : (B))
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.37 #define _
+              MAX_(A, B)     ((A)>=(B)? (A) : (B))
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.38 #
+      define _MIN_(A, B)     ((A)<=(B)? (A) : (B))
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.39 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.40 #
+      define MININARGS      13
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.41 #
+      define MINOUTARGS     2
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.43 #
+      define BA_MOTSTRUCT            0
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.43 #define BA_
+                MOTSTRUCT            0
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.44 #
+      define BA_MOT                  1
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.45 #
+      define BA_STRUCT               2
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.46 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.48 #
+      define CLOCKS_PER_MSEC (CLOCKS_PER_SEC/1000.0)
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.48 #define CLOCKS_
+                    PER_MSEC (CLOCKS_PER_SEC/1000.0)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.49 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.50 #
+      define MAXNAMELEN              256
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.53 #
+      ifdef _WIN32 /* windows platform */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.53 #ifdef _
+             WIN32 /* windows platform */
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.54 #
+      include <windows.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.55 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.56 #
+      define LOADFUNCTION GetProcAddress
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.57 #
+      define FUNCTIONISVALID(ptr) ((ptr)!=NULL)
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.61 #
+      else /* !_WIN32, assume Un*x */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.61 #else /* !_
+                WIN32, assume Un*x */
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.62 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.63 #
+      ifndef __unix__
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.63 #ifndef _
+              _unix__
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.63 #ifndef __
+               unix__
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.63 #ifndef __unix__
+                     
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing { inserted.
+<to be read again> 
+                   ##
+l.64 #
+      warning This is not a Windows platform and symbol __unix__ is not defi...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! You can't use `macro parameter character #' in math mode.
+<recently read> ##
+                  
+l.64 #
+      warning This is not a Windows platform and symbol __unix__ is not defi...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.64 ...is is not a Windows platform and symbol __
+                                                  unix__ is not defined; con...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.64 ...not a Windows platform and symbol __unix__
+                                                   is not defined; continuin...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! You can't use `macro parameter character #' in math mode.
+l.65 #
+      endif /* __unix__ */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.65 #endif /* __
+                 unix__ */
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing { inserted.
+<to be read again> 
+                   _
+l.65 #endif /* __unix__
+                        */
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.66 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (15.6139pt too wide) in paragraph at lines 63--66
+[]\tenrm ifndef $[]$ |
+
+\hbox(6.88889+12.7758)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm i
+.\tenrm f
+.\tenrm n
+.\tenrm d
+.etc.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.67 #
+      include <dlfcn.h>
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.69 #
+      define LOADFUNCTION dlsym
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.70 #
+      define FUNCTIONISVALID(ptr) (dlerror()==NULL)
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.74 #
+      endif /* _WIN32 */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.74 #endif /* _
+                WIN32 */
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.75 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.77 ... or dynlib names of the fitting function &
+                                                   its Jacobian */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (43.02379pt too wide) in paragraph at lines 76--79
+[]\tenrm struct me-xdata  /* ma-tlab or dyn-lib na-mes of the fit-ting func-tio
+n  its Ja-co-bian */ char proj-name[MAXNAMELEN],|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm r
+.\tenrm u
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.81   int isrow_
+                 p0;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.82 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.84    * for passing the camera &
+                                   structure parameter vectors, respectively.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.99   /* pointers to camera &
+                               structure parameters */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.108 va_
+         list args;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.109 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.110 	va_
+          start(args, fmt);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.113 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.121 va_
+         list args;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.122 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.123 	va_
+          start(args, fmt);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.126 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in vertical mode.
+l.130 #
+       if 0
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.149 #
+       endif
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+ [1]
+Overfull \hbox (4.87108pt too wide) in paragraph at lines 181--186
+[]\tenrm m=mxGetM(Am); n=mxGetN(Am); val=mxGetPr(Am); ro-widx=mxGetIr(Am); colp
+tr=mxGetJc(Am); |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm m
+.\tenrm =
+.\tenrm m
+.\tenrm x
+.etc.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.206 #
+       define UNROLLBLOCKSIZE  8
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.207 static void dblcopy_
+                          (double *x, double *y, int n)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.211 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.211 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (48.8017pt too wide) in paragraph at lines 203--211
+[]\tenrm /* me-mory copy (i.e., x=y) using loop unrol-ling and bloc-king. * see
+ http://www.abarnett.demon.co.uk/tutorial.html|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm m
+.etc.
+
+! Too many }'s.
+l.255 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Misplaced alignment tab character &.
+l.257 ...next 7 functions handle user projection &
+                                                   Jacobian functions coded ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.258 static void proj_
+                       motstrMATLAB(int j, int i, double *aj, double *bi, do...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.264 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.264 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (304.67181pt too wide) in paragraph at lines 257--264
+\tenrm proj$[]\teni otstrMATLAB\tenrm (\teni intj; inti; double \tensy ^^C \ten
+i aj; double \tensy ^^C \teni bi; double \tensy ^^C \teni xij; void \tensy ^^C 
+\teni adata\tenrm )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm p
+.\tenrm r
+.\tenrm o
+.\kern0.55554
+.\tenrm j
+.etc.
+
+! Misplaced alignment tab character &.
+l.281   /* copy back results &
+                               cleanup */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Too many }'s.
+l.288 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.290 static void projac_
+                         motstrMATLAB(int j, int i, double *aj, double *bi, ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.296 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.296 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Misplaced alignment tab character &.
+l.313   /* copy back results &
+                               cleanup. Note that the Jacobians
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.321   dblcopy_
+                (Aij, mp, dat->mnp*dat->cnp);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.322 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (42.04486pt too wide) in paragraph at lines 313--322
+\tenrm as vec-tors */ mp=mxGetPr(lhs[0]); /* for(k=0; k<dat->mnp*dat->cnp; ++k)
+ Aij[k]=mp[k]; */ dblcopy$[]\teni Aij; mp; dat\tensy ^^@ \teni >|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm a
+.\tenrm s
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm v
+.\kern-0.27779
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.328   dblcopy_
+                (Bij, mp, dat->mnp*dat->pnp);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.329 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (7.07607pt too wide) in paragraph at lines 323--329
+[]\tenrm mp=mxGetPr(lhs[1]); /* for(k=0; k<dat->mnp*dat->pnp; ++k) Bij[k]=mp[k]
+; */ dblcopy$[]\teni Bij; mp; dat\tensy ^^@ \teni >|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm m
+.\tenrm p
+.\tenrm =
+.\tenrm m
+.etc.
+
+! Too many }'s.
+l.333 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.336 static void proj_
+                       motMATLAB(int j, int i, double *aj, double *xij, void...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.343 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.343 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (362.75047pt too wide) in paragraph at lines 336--343
+[]\tenrm static void proj$[]\teni otMATLAB\tenrm (\teni intj; inti; double \ten
+sy ^^C \teni aj; double \tensy ^^C \teni xij; void \tensy ^^C \teni adata\tenrm
+ )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+ [2]
+! Misplaced alignment tab character &.
+l.361   /* copy back results &
+                               cleanup */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Too many }'s.
+l.368 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.370 static void projac_
+                         motMATLAB(int j, int i, double *aj, double *Aij, vo...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.377 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.377 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (373.97968pt too wide) in paragraph at lines 370--377
+[]\tenrm static void projac$[]\teni otMATLAB\tenrm (\teni intj; inti; double \t
+ensy ^^C \teni aj; double \tensy ^^C \teni Aij; void \tensy ^^C \teni adata\ten
+rm )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+! Misplaced alignment tab character &.
+l.395   /* copy back results &
+                               cleanup. Note that the Jacobian
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.403   dblcopy_
+                (Aij, mp, dat->mnp*dat->cnp);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.404 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (26.93375pt too wide) in paragraph at lines 395--404
+\tenrm vec-tor */ mp=mxGetPr(lhs[0]); /* for(k=0; k<dat->mnp*dat->cnp; ++k) Aij
+[k]=mp[k]; */ dblcopy$[]\teni Aij; mp; dat\tensy ^^@ \teni >|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm v
+.\kern-0.27779
+.\tenrm e
+.\tenrm c
+.\discretionary
+..\tenrm -
+.etc.
+
+! Too many }'s.
+l.407 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.409 static void proj_
+                       strMATLAB(int j, int i, double *bi, double *xij, void...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.416 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.416 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (359.92638pt too wide) in paragraph at lines 409--416
+[]\tenrm static void proj$[]\teni trMATLAB\tenrm (\teni intj; inti; double \ten
+sy ^^C \teni bi; double \tensy ^^C \teni xij; void \tensy ^^C \teni adata\tenrm
+ )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+! Misplaced alignment tab character &.
+l.434   /* copy back results &
+                               cleanup */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Too many }'s.
+l.441 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.443 static void projac_
+                         strMATLAB(int j, int i, double *bi, double *Bij, vo...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.450 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.450 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (371.74237pt too wide) in paragraph at lines 443--450
+[]\tenrm static void projac$[]\teni trMATLAB\tenrm (\teni intj; inti; double \t
+ensy ^^C \teni bi; double \tensy ^^C \teni Bij; void \tensy ^^C \teni adata\ten
+rm )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+! Misplaced alignment tab character &.
+l.468   /* copy back results &
+                               cleanup. Note that the Jacobian
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.476   dblcopy_
+                (Bij, mp, dat->mnp*dat->pnp);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.477 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (28.21501pt too wide) in paragraph at lines 468--477
+\tenrm vec-tor */ mp=mxGetPr(lhs[0]); /* for(k=0; k<dat->mnp*dat->pnp; ++k) Bij
+[k]=mp[k]; */ dblcopy$[]\teni Bij; mp; dat\tensy ^^@ \teni >|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm v
+.\kern-0.27779
+.\tenrm e
+.\tenrm c
+.\discretionary
+..\tenrm -
+.etc.
+
+! Too many }'s.
+l.480 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.512         _
+               MAX_(mxGetM(lhs[0]), mxGetN(lhs[0]))!=dat->mnp){
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.519   }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.520 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (78.15291pt too wide) in paragraph at lines 504--520
+\tenrm mxI-sCom-plex(lhs[0]) || !(mxGetM(lhs[0])==1 || mxGetN(lhs[0])==1) || $[
+]\teni AX[]mxGetM\tenrm (\teni lhs\tenrm [0])\teni ; mxGetN\tenrm (\teni lhs\te
+nrm [0]))! =|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm m
+.\tenrm x
+.\tenrm I
+.\discretionary
+..\tenrm -
+.\tenrm s
+.etc.
+
+
+Overfull \hbox (67.3295pt too wide) in paragraph at lines 504--520
+\teni dat\tensy ^^@ \teni > mnp\tenrm )[]\teni = \tensy ^^C|
+
+\hbox(7.51782+3.55557)x469.75499, glue set - 1.0
+.\teni d
+.\teni a
+.\teni t
+.\tensy ^^@
+.\glue(\thickmuskip) 2.77771 plus 2.77771
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.523     nlhs=(mintype==BA_
+                            MOTSTRUCT)? 2 : 1;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.548 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (20.7263pt too wide) in paragraph at lines 521--548
+[]\tenrm if(chkjac) lhs[0]=lhs[1]=NULL; nlhs=(mintype==BA$[]\teni OTSTRUCT\tenr
+m )?2 : 1; \teni = \tensy ^^C \teni attempttocallthesuppliedjac \tensy ^^C|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm i
+.\tenrm f
+.\tenrm (
+.\tenrm c
+.etc.
+
+
+Overfull \hbox (197.41064pt too wide) in paragraph at lines 521--548
+\teni =k \tenrm = \teni mexCallMATLAB\tenrm (\teni nlhs; lhs; dat\tensy ^^@ \te
+ni > nrhs; dat\tensy ^^@ \teni > rhs; dat\tensy ^^@ \teni > projacname\tenrm );
+ \teni if\tenrm (\teni k\tenrm )[]\teni elseif\tenrm (\teni mintype \tenrm ==|
+
+\hbox(7.51782+2.5)x469.75499
+.\teni =
+.\teni k
+.\kern0.3148
+.\glue(\thickmuskip) 2.77771 plus 2.77771
+.\tenrm =
+.etc.
+
+
+Overfull \hbox (2371.96907pt too wide) in paragraph at lines 521--548
+\teni BA[]OTSTRUCT\tensy jj\teni mintype \tenrm == \teni BA[]OT\tenrm )[]\teni 
+else[]$ |
+
+\hbox(7.51782+3.55557)x469.75499
+.\teni B
+.\kern0.50172
+.\teni A
+.\hbox(4.78334+0.0)x8.8764, shifted 1.49998
+..\seveni M
+.\teni O
+.etc.
+
+! Misplaced alignment tab character &.
+l.549     if(lhs[0] &
+                     & mxIsSparse(lhs[0])){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.549     if(lhs[0] &&
+                       mxIsSparse(lhs[0])){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.554     if(nlhs==2){ /* BA_
+                             MOTSTRUCT */
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.562       else if(lhs[1] &
+                            & mxIsSparse(lhs[1])){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.562       else if(lhs[1] &&
+                              mxIsSparse(lhs[1])){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Extra }, or forgotten $.
+l.566     }
+           
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.567 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (146.08572pt too wide) in paragraph at lines 554--567
+[]\tenrm if(nlhs==2) /* BA$[]\teni OTSTRUCT \tensy ^^C \teni =if\tenrm (!\teni 
+lhs\tenrm [1]\tensy jj\tenrm !\teni mxIsDouble\tenrm (\teni lhs\tenrm [1])\tens
+y jj\teni mxIsComplex\tenrm (\teni lhs\tenrm [1])\tensy jj[]\teni IN[]mxGetM\te
+nrm (\teni lhs\tenrm [1])\teni ; mxGetN\tenrm (\teni lhs\tenrm [1]))! =|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm i
+.\tenrm f
+.\tenrm (
+.\tenrm n
+.etc.
+
+
+Overfull \hbox (641.1047pt too wide) in paragraph at lines 554--567
+\tenrm 1\tensy jj[]\teni AX[]mxGetM\tenrm (\teni lhs\tenrm [1])\teni ; mxGetN\t
+enrm (\teni lhs\tenrm [1]))! = \teni dat\tensy ^^@ \teni > mnp \tensy ^^C \teni
+ dat\tensy ^^@ \teni > pnp\tenrm )[]\teni elseif\tenrm (\teni lhs\tenrm [1]\ten
+i mxIsSparse\tenrm (\teni lhs\tenrm [1]))[]$ |
+
+\hbox(7.51782+3.55557)x469.75499, glue set - 1.0
+.\tenrm 1
+.\tensy j
+.\tensy j
+.\hbox(4.78334+0.0)x8.8764, shifted 1.49998
+..\seveni M
+.\teni A
+.etc.
+
+ [3]
+! Misplaced alignment tab character &.
+l.579 ...next 6 functions handle user projection &
+                                                   Jacobian functions coming...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.580 static void proj_
+                       motstrDL(int j, int i, double *aj, double *bi, double...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.585 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.585 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (482.82608pt too wide) in paragraph at lines 579--585
+\tenrm proj$[]\teni otstrDL\tenrm (\teni intj; inti; double \tensy ^^C \teni aj
+; double \tensy ^^C \teni bi; double \tensy ^^C \teni xij; void \tensy ^^C \ten
+i adata\tenrm )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm p
+.\tenrm r
+.\tenrm o
+.\kern0.55554
+.\tenrm j
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.595 static void projac_
+                         motstrDL(int j, int i, double *aj, double *bi, doub...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.600 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.600 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (701.87994pt too wide) in paragraph at lines 595--600
+[]\tenrm static void projac$[]\teni otstrDL\tenrm (\teni intj; inti; double \te
+nsy ^^C \teni aj; double \tensy ^^C \teni bi; double \tensy ^^C \teni Aij; doub
+le \tensy ^^C \teni Bij; void \tensy ^^C \teni adata\tenrm )[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (29.13492pt too wide) in paragraph at lines 601--605
+[]\tenrm /* get po-in-ter to func-tion... */ projac=(projacMS)LOADFUNCTION(dat-
+>projaclibhandle, dat->projacname);|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm g
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.611 static void proj_
+                       motDL(int j, int i, double *aj, double *xij, void *ad...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.617 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.617 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (527.48811pt too wide) in paragraph at lines 611--617
+[]\tenrm static void proj$[]\teni otDL\tenrm (\teni intj; inti; double \tensy ^
+^C \teni aj; double \tensy ^^C \teni xij; void \tensy ^^C \teni adata\tenrm )[]
+$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+! Too many }'s.
+l.626 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.628 static void projac_
+                         motDL(int j, int i, double *aj, double *Aij, void *...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.634 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.634 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (569.3424pt too wide) in paragraph at lines 628--634
+[]\tenrm static void projac$[]\teni otDL\tenrm (\teni intj; inti; double \tensy
+ ^^C \teni aj; double \tensy ^^C \teni Aij; void \tensy ^^C \teni adata\tenrm )
+[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (23.57935pt too wide) in paragraph at lines 635--639
+[]\tenrm /* get po-in-ter to func-tion... */ projac=(projacM)LOADFUNCTION(dat->
+projaclibhandle, dat->projacname);|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm g
+.etc.
+
+! Too many }'s.
+l.643 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.645 static void proj_
+                       strDL(int j, int i, double *bi, double *xij, void *ad...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.651 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.651 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (516.49733pt too wide) in paragraph at lines 645--651
+[]\tenrm static void proj$[]\teni trDL\tenrm (\teni intj; inti; double \tensy ^
+^C \teni bi; double \tensy ^^C \teni xij; void \tensy ^^C \teni adata\tenrm )[]
+$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+! Too many }'s.
+l.660 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.662 static void projac_
+                         strDL(int j, int i, double *bi, double *Bij, void *...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.668 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.668 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (559.5252pt too wide) in paragraph at lines 662--668
+[]\tenrm static void projac$[]\teni trDL\tenrm (\teni intj; inti; double \tensy
+ ^^C \teni bi; double \tensy ^^C \teni Bij; void \tensy ^^C \teni adata\tenrm )
+[]$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (19.96823pt too wide) in paragraph at lines 669--673
+[]\tenrm /* get po-in-ter to func-tion... */ projac=(projacS)LOADFUNCTION(dat->
+projaclibhandle, dat->projacname);|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm g
+.etc.
+
+! Too many }'s.
+l.677 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.715 int status, reftype=BA_
+                             MOTSTRUCT, itmax, verbose=0, havejac, havedynpr...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.722 mxArray **prhs=(mxArray **)&
+                                  Prhs[0];
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.725 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (230.3752pt too wide) in paragraph at lines 711--725
+\teni NULL\tenrm ; \teni doubleopts\tenrm [\teni SBA[]PTSSZ\tenrm ] = []; \teni
+ doubleinfo\tenrm [\teni SBA[]NFOSZ\tenrm ]; \teni char \tensy ^^C|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\teni N
+.\kern1.09026
+.\teni U
+.\kern1.09026
+.\teni L
+.etc.
+
+
+Overfull \hbox (29.41563pt too wide) in paragraph at lines 711--725
+\teni vmask; \tensy ^^C\teni str\tenrm ; \teni registerdouble \tensy ^^C \teni 
+pdbl\tenrm ; \teni mxArray \tensy ^^C ^^C\teni prhs \tenrm = (\teni mxArray \te
+nsy ^^C ^^C\tenrm )\teni Prhs\tenrm [0]; \teni structmexdatamdata\tenrm ; \teni
+ constintmin\tenrm 1 =|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\teni v
+.\kern0.35878
+.\teni m
+.\teni a
+.\teni s
+.etc.
+
+! Misplaced alignment tab character &.
+l.726 static char *reftypename[]={"motion &
+                                            structure", "motion only", "stru...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.728 clock_
+            t start_time, end_time;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.729 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+ [4]
+Overfull \hbox (83.12117pt too wide) in paragraph at lines 736--741
+\tenrm || mxGetM(prhs[0])!=1 || mxGetN(prhs[0])!=1) me-xEr-rMsg-Txt("sba: n mus
+t be a sca-lar."); n=(int)mxGetScalar(prhs[0]); |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm |
+.\tenrm |
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm m
+.\tenrm x
+.etc.
+
+
+Overfull \hbox (88.67674pt too wide) in paragraph at lines 748--753
+\tenrm || mxGetM(prhs[2])!=1 || mxGetN(prhs[2])!=1) me-xEr-rMsg-Txt("sba: m mus
+t be a sca-lar."); m=(int)mxGetScalar(prhs[2]); |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm |
+.\tenrm |
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm m
+.\tenrm x
+.etc.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.766 #
+       ifdef DEBUG
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.769 #
+       endif /* DEBUG */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.781     mdata.isrow_
+                      p0=1;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.782   }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.794 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (149.3971pt too wide) in paragraph at lines 771--794
+\tenrm of pa-ra-me-ters */ if(mxGetM(prhs[5])==1) nvars=mxGetN(prhs[5]); mdata.
+isrow$[]0 = 1; \teni else[]= \tensy ^^C|
+
+\hbox(7.5+2.86108)x469.75499, glue set - 1.0
+.\tenrm o
+.\tenrm f
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm p
+.\tenrm a
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.816   nprojs=_
+                MAX_(mxGetM(prhs[8]), mxGetN(prhs[8]));
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.817 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.820   if(mxIsDouble(prhs[9]) &
+                                & !mxIsComplex(prhs[9]) && (mxGetM(prhs[9])=...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.820   if(mxIsDouble(prhs[9]) &&
+                                  !mxIsComplex(prhs[9]) && (mxGetM(prhs[9])=...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.820 ...ouble(prhs[9]) && !mxIsComplex(prhs[9]) &
+                                                  & (mxGetM(prhs[9])==1 || m...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.820 ...uble(prhs[9]) && !mxIsComplex(prhs[9]) &&
+                                                   (mxGetM(prhs[9])==1 || mx...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.821     covlen=_
+                  MAX_(mxGetM(prhs[9]), mxGetN(prhs[9]));
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.824 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+<to be read again> 
+                   \par 
+l.824 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (106.87587pt too wide) in paragraph at lines 818--824
+\tenrm plex(prhs[9])  (mxGetM(prhs[9])==1 || mxGetN(prhs[9])==1)) covlen=$[]\te
+ni AX[]mxGetM\tenrm (\teni prhs\tenrm [9])\teni ; mxGetN\tenrm (\teni prhs\tenr
+m [9])); \teni if\tenrm (\teni covlen >|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm p
+.\tenrm l
+.\tenrm e
+.\tenrm x
+.\tenrm (
+.etc.
+
+! Misplaced alignment tab character &.
+l.844   if(covx &
+                 & covlen!=len*mnp*mnp)
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.844   if(covx &&
+                   covlen!=len*mnp*mnp)
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.855 ...s=mxGetString(prhs[10], mdata.projname, _
+                                                  MIN_(len, MAXNAMELEN));
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+<recently read> \0
+                  
+l.860     *str++='\0
+                    ';
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Double superscript.
+<recently read> ^
+                 
+'->^
+    \bgroup \prim@s 
+l.860     *str++='\0'
+                     ;
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+! You can't use `macro parameter character #' in math mode.
+l.864 #
+       ifdef _WIN32
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.867 #
+       else
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.870 #
+       endif /* _WIN32 */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.878 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (45.46808pt too wide) in paragraph at lines 847--878
+[]\tenrm /** proj **/ /* the ele-venth re-qu-ired ar-gu-ment must be a string ,
+ i.e. a char row vec-tor */ if(mxIsChar(prhs[10])!=1)|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.etc.
+
+
+Overfull \hbox (9.12086pt too wide) in paragraph at lines 847--878
+\tenrm proj ar-gu-ment must be a string (i.e. char row vec-tor)."); /* re-triev
+e sup-plied name */ len=mxGetN(prhs[10])+1;|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm p
+.\tenrm r
+.\tenrm o
+.\kern0.55554
+.\tenrm j
+.etc.
+
+
+Overfull \hbox (52.44666pt too wide) in paragraph at lines 847--878
+\tenrm sta-tus=mxGetString(prhs[10], mdata.projname, $[]\teni IN[]len; MAXNAMEL
+EN\tenrm )); \teni if\tenrm (\teni status\tenrm ! = 0)\teni mexErrMsgTxt\tenrm 
+("\teni sba \tenrm :|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm s
+.\tenrm t
+.\tenrm a
+.\discretionary
+..\tenrm -
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (2034.42068pt too wide) in paragraph at lines 847--878
+\teni notenoughspace:Stringistruncated:\tenrm "); \teni = \tensy ^^C \teni chec
+kifwehaveaname\tenrm @\teni librarypair \tensy ^^C \teni =if\tenrm ((\teni str 
+\tenrm = \teni strchr\tenrm (\teni mdata:projname;[] \tenrm @[])))[]\teni else[
+]$ |
+
+\hbox(7.51782+2.5)x469.75499, glue set - 1.0
+.\teni n
+.\teni o
+.\teni t
+.\teni e
+.\teni n
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.887 ...mxGetString(prhs[11], mdata.projacname, _
+                                                  MIN_(len, MAXNAMELEN));
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.891 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (65.59048pt too wide) in paragraph at lines 879--891
+\tenrm len=mxGetN(prhs[11])+1; sta-tus=mxGetString(prhs[11], mdata.projacname, 
+$[]\teni IN[]len; MAXNAMELEN\tenrm )); \teni if\tenrm (\teni status\tenrm ! =|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm l
+.\tenrm e
+.\tenrm n
+.\tenrm =
+.\tenrm m
+.etc.
+
+ [5]
+! Undefined control sequence.
+l.894           *str++='\0
+                          ';
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.899 #
+                ifdef _WIN32
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.899 #         ifdef _
+                       WIN32
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.902 #
+                else
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.905 #
+                endif /* _WIN32 */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Extra }, or forgotten $.
+l.907           }
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.911         }
+               
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.916 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (136.50748pt too wide) in paragraph at lines 892--916
+\tenrm it */  ifdef $[]\teni IN\tenrm 32\teni mdata:projaclibhandle \tenrm = \t
+eni LoadLibrary\tenrm (\teni mdata:projaclibname\tenrm ); \teni if\tenrm (!\ten
+i mdata:projaclibhandle\tenrm )\teni elsemdata:projaclibhandle \tenrm =|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm i
+.\tenrm t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm *
+.\tenrm /
+.etc.
+
+
+Overfull \hbox (69.28381pt too wide) in paragraph at lines 892--916
+\teni dlopen\tenrm (\teni mdata:projaclibname; RTLD[]AZY\tenrm ); \teni if\tenr
+m (!\teni mdata:projaclibhandle\tenrm )\teni endif= \tensy ^^C[] \teni IN\tenrm
+ 32 \tensy ^^C \teni =matlabFmtdErrMsgTxt\tenrm ("\teni sba \tenrm :|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\teni d
+.\teni l
+.\kern0.19678
+.\teni o
+.\teni p
+.etc.
+
+
+Overfull \hbox (38.70613pt too wide) in paragraph at lines 892--916
+\teni errorloadingdynamiclibraryelse= \tensy ^^C \teni proj:functionandJacobian
+comefromthesamelibrary \tensy ^^C \teni =mdata:projaclibhandle \tenrm =|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\teni e
+.\teni r
+.\kern0.27779
+.\teni r
+.\kern0.27779
+.etc.
+
+
+Overfull \hbox (2.32925pt too wide) in paragraph at lines 917--927
+\tenrm rMsg-Txt("sba: pro-jac ar-gu-ment must be a string (i.e. row vec-tor); g
+ot mxGetM(prhs[11]), mxGetN(prhs[11]));|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm r
+.\tenrm M
+.\tenrm s
+.\tenrm g
+.\discretionary
+..\tenrm -
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 917--927
+
+
+\hbox(0.0+0.0)x469.75499
+.\glue(\rightskip) 0.0
+
+! You can't use `macro parameter character #' in vertical mode.
+l.928 #
+       ifdef DEBUG
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.931 #
+       endif /* DEBUG */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Misplaced alignment tab character &.
+l.943     if(mxIsDouble(prhs[min1]) &
+                                     & !mxIsComplex(prhs[min1]) && mxGetM(pr...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.943     if(mxIsDouble(prhs[min1]) &&
+                                       !mxIsComplex(prhs[min1]) && mxGetM(pr...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.943 ...prhs[min1]) && !mxIsComplex(prhs[min1]) &
+                                                  & mxGetM(prhs[min1])==1 &&...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.943 ...rhs[min1]) && !mxIsComplex(prhs[min1]) &&
+                                                   mxGetM(prhs[min1])==1 && ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.943 ...ex(prhs[min1]) && mxGetM(prhs[min1])==1 &
+                                                  & mxGetN(prhs[min1])==1){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.943 ...x(prhs[min1]) && mxGetM(prhs[min1])==1 &&
+                                                   mxGetN(prhs[min1])==1){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (33.14853pt too wide) in paragraph at lines 941--945
+[]\tenrm /* check if we have a sca-lar ar-gu-ment; if yes, this is ta-ken to be
+ the 'ver-bose' ar-gu-ment */ if(nrhs>=MININARGS)|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm c
+.etc.
+
+
+Overfull \hbox (5.13504pt too wide) in paragraph at lines 941--945
+\tenrm if(mxIsDouble(prhs[min1])  !mxI-sCom-plex(prhs[min1])  mxGetM(prhs[min1]
+)==1  mxGetN(prhs[min1])==1)|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm i
+.\tenrm f
+.\tenrm (
+.\tenrm m
+.\tenrm x
+.etc.
+
+! Misplaced alignment tab character &.
+l.952   if(nrhs>=MININARGS &
+                            & mxIsDouble(prhs[min1]) && !mxIsComplex(prhs[mi...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.952   if(nrhs>=MININARGS &&
+                              mxIsDouble(prhs[min1]) && !mxIsComplex(prhs[mi...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.952 ...hs>=MININARGS && mxIsDouble(prhs[min1]) &
+                                                  & !mxIsComplex(prhs[min1])...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.952 ...s>=MININARGS && mxIsDouble(prhs[min1]) &&
+                                                   !mxIsComplex(prhs[min1]) ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.952 ...prhs[min1]) && !mxIsComplex(prhs[min1]) &
+                                                  & ((mxGetM(prhs[min1])==1 ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.952 ...rhs[min1]) && !mxIsComplex(prhs[min1]) &&
+                                                   ((mxGetM(prhs[min1])==1 |...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.953 ...              || (mxGetM(prhs[min1])==0 &
+                                                  & mxGetN(prhs[min1])==0))){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.953 ...             || (mxGetM(prhs[min1])==0 &&
+                                                   mxGetN(prhs[min1])==0))){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.955     nopts=_
+                 MAX_(mxGetM(prhs[min1]), mxGetN(prhs[min1]));
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.964 #
+       ifdef DEBUG
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.967 ...A: empty options vector, using defaults\n
+                                                  ");
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in math mode.
+l.969 #
+       endif /* DEBUG */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.970 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (16.67628pt too wide) in paragraph at lines 951--970
+[]\tenrm /* check if we have a vec-tor ar-gu-ment; if yes, this is ta-ken to be
+ the 'opts' ar-gu-ment */ if(nrhs>=MININARGS|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm c
+.etc.
+
+
+Overfull \hbox (23.19061pt too wide) in paragraph at lines 951--970
+\tenrm mxIs-Do-uble(prhs[min1])  !mxI-sCom-plex(prhs[min1])  ((mxGetM(prhs[min1
+])==1 || mxGetN(prhs[min1])==1)|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm m
+.\tenrm x
+.\tenrm I
+.\tenrm s
+.\discretionary
+..\tenrm -
+.etc.
+
+
+Overfull \hbox (245.41588pt too wide) in paragraph at lines 951--970
+\tenrm || (mxGetM(prhs[min1])==0  mxGetN(prhs[min1])==0))) pdbl=mxGetPr(prhs[mi
+n1]); nopts=$[]\teni AX[]mxGetM\tenrm (\teni prhs\tenrm [\teni min\tenrm 1])\te
+ni ; mxGetN\tenrm (\teni prhs\tenrm [\teni min\tenrm 1])); \teni if\tenrm (\ten
+i nopts\tenrm ! =|
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\tenrm |
+.\tenrm |
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm (
+.\tenrm m
+.etc.
+
+
+Overfull \hbox (1154.86719pt too wide) in paragraph at lines 951--970
+\tenrm 0)[]\teni ifdefDEBUGelse[]endif= \tensy ^^C|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm 0
+.\tenrm )
+.\hbox(7.5+2.5)x1154.2943
+..\teni =
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\tensy ^^C
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\teni i
+..etc.
+.\teni i
+.\teni f
+.etc.
+
+! Misplaced alignment tab character &.
+l.976   if(nrhs>=MININARGS &
+                            & mxIsChar(prhs[min1])==1 && mxGetM(prhs[min1])=...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.976   if(nrhs>=MININARGS &&
+                              mxIsChar(prhs[min1])==1 && mxGetM(prhs[min1])=...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.976 ...s>=MININARGS && mxIsChar(prhs[min1])==1 &
+                                                  & mxGetM(prhs[min1])==1){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.976 ...>=MININARGS && mxIsChar(prhs[min1])==1 &&
+                                                   mxGetM(prhs[min1])==1){
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (27.25966pt too wide) in paragraph at lines 975--978
+[]\tenrm /* check if we have a string ar-gu-ment; if yes, this is ta-ken to be 
+the 're-ftype' ar-gu-ment */ if(nrhs>=MININARGS|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm c
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.989 ...(!strcmp(refhowto, "motstr")) reftype=BA_
+                                                  MOTSTRUCT;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.993 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (8.81136pt too wide) in paragraph at lines 989--993
+[]\tenrm if(!strcmp(refhowto, "motstr")) reftype=BA$[]\teni OTSTRUCT\tenrm ; \t
+eni elseif\tenrm (!\teni strcmp\tenrm (\teni refhowto; \tenrm "\teni mot\tenrm 
+"))\teni reftype \tenrm =|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm i
+.\tenrm f
+.\tenrm (
+.\tenrm !
+.etc.
+
+
+Overfull \hbox (115.24257pt too wide) in paragraph at lines 989--993
+\teni BA[]OT\tenrm ; \teni elseif\tenrm (!\teni strcmp\tenrm (\teni refhowto; \
+tenrm "\teni str\tenrm "))\teni reftype \tenrm = \teni BA[]TRUCT\tenrm ; \teni 
+elsematlabFmtdErrMsgTxt\tenrm ("\teni sba \tenrm : \teni unknownminimizationtyp
+e[]$ |
+
+\hbox(7.51782+2.5)x469.75499
+.\teni B
+.\kern0.50172
+.\teni A
+.\hbox(4.78334+0.0)x8.8764, shifted 1.49998
+..\seveni M
+.\teni O
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1000     reftype=BA_
+                      MOTSTRUCT;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.1001 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1008 #
+        ifdef DEBUG
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1011 #
+        endif /* DEBUG */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (51.52394pt too wide) in paragraph at lines 1022--1026
+[]\tenrm mdata.rhs[0]=mxCreateDoubleMatrix(1, 1, mxREAL); /* ca-mera in-dex */ 
+mdata.rhs[1]=mxCreateDoubleMatrix(1,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm m
+.\tenrm d
+.\tenrm a
+.\tenrm t
+.etc.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1040 #
+        ifdef DEBUG
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1043 #
+        endif
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Misplaced alignment tab character &.
+l.1048 ...sure that the supplied matlab function &
+                                                   Jacobian are as expected */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1049   if((!havedynproj || !havedynprojac) &
+                                              & /* at least one in matlab */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1049   if((!havedynproj || !havedynprojac) &&
+                                                /* at least one in matlab */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1050 ..., 0, p, p+m*cnp, !havedynproj, havejac &
+                                                  & !havedynprojac, reftype,...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1050 ... 0, p, p+m*cnp, !havedynproj, havejac &&
+                                                   !havedynprojac, reftype, ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1050 ...j, havejac && !havedynprojac, reftype, &
+                                                  mdata)){ /* check using fi...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1050 ... &mdata)){ /* check using first camera &
+                                                   first point */
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1051     status=SBA_
+                      ERROR;
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.1053   }
+          
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.1054 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (18.61534pt too wide) in paragraph at lines 1048--1054
+\tenrm jac  !ha-ve-dyn-pro-jac, re-ftype, mdata)) /* check using first ca-mera 
+ first po-int */ status=SBA$[]\teni RROR\tenrm ; \teni gotocleanup\tenrm ;$ |
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm j
+.\tenrm a
+.\tenrm c
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.etc.
+
+ [6]
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1056   start_
+               time=clock();
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.1063                               (void *)&
+                                              mdata, itmax, verbose>1, opts,...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1072                             (void *)&
+                                            mdata, itmax, verbose>1, opts, i...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.1080                             (void *)&
+                                            mdata, itmax, verbose>1, opts, i...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.1086 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (5192.81575pt too wide) in paragraph at lines 1055--1086
+[]\tenrm /* in-voke sba */ start$[]\teni ime \tenrm = \teni clock\tenrm (); \te
+ni switch\tenrm (\teni reftype\tenrm )[]\teni end[]ime \tenrm =|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm i
+.etc.
+
+! Undefined control sequence.
+l.1089     mexPrintf("\nSBA
+                            using %d 3D pts, %d frames and %d image projecti...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1091     mexPrintf("\nRefining
+                                 %s, %s Jacobian\n\n", reftypename[reftype],...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1095               ((double) (end_
+                                    time - start_time)) / CLOCKS_PER_MSEC);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.1097   }
+          
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.1098 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (17.82957pt too wide) in paragraph at lines 1087--1098
+\tenrm ned sta-tus, info[5], info[6], info[1]/nprojs, info[0]/nprojs, (int)info
+[7], (int)info[8], (int)info[9]); me-xPrintf("Elapsed|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm n
+.\tenrm e
+.\tenrm d
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm s
+.etc.
+
+
+Overfull \hbox (49.20439pt too wide) in paragraph at lines 1099--1104
+[]\tenrm /* copy back re-turn re-sults */ /** ret **/ plhs[0]=mxCreateDoubleMat
+rix(1, 1, mxREAL); pdbl=mxGetPr(plhs[0]);|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\tenrm c
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1106   plhs[1]=(mdata.isrow_
+                              p0==1)? mxCreateDoubleMatrix(1, nvars, mxREAL)...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.1113 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (175.68736pt too wide) in paragraph at lines 1105--1113
+[]\tenrm /** p **/ plhs[1]=(mdata.isrow$[]0 == 1)?\teni mxCreateDoubleMatrix\te
+nrm (1\teni ; nvars; mxREAL\tenrm ) : \teni mxCreateDoubleMatrix\tenrm (\teni n
+vars; \tenrm 1\teni ; mxREAL\tenrm ); \teni pdbl \tenrm =|
+
+\hbox(7.5+2.86108)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.etc.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1116     plhs[2]=mxCreateDoubleMatrix(1, SBA_
+                                               INFOSZ, mxREAL);
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.1123   }
+          
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.1124 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (13.94553pt too wide) in paragraph at lines 1114--1124
+[]\tenrm /** info **/ if(nlhs>MINOUTARGS) plhs[2]=mxCreateDoubleMatrix(1, SBA$[
+]\teni NFOSZ; mxREAL\tenrm ); \teni pdbl \tenrm =|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm /
+.\tenrm *
+.\tenrm *
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.etc.
+
+
+Overfull \hbox (19.40314pt too wide) in paragraph at lines 1114--1124
+\teni mxGetPr\tenrm (\teni plhs\tenrm [2]); \teni = \tensy ^^C \teni for\tenrm 
+(\teni i \tenrm = 0; \teni i < SBA[]NFOSZ\tenrm ; + + \teni i\tenrm )\teni pdbl
+\tenrm [\teni i\tenrm ] = \teni info\tenrm [\teni i\tenrm ]; \tensy ^^C\teni =d
+blcopy[]pdbl; info; SBA[]NFOSZ\tenrm );$ |
+
+\hbox(7.5+3.55557)x469.75499, glue set - 1.0
+.\teni m
+.\teni x
+.\teni G
+.\teni e
+.\teni t
+.etc.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1140 #
+        ifdef _WIN32
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1140 #ifdef _
+               WIN32
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.1143 #
+        else
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.1146 #
+        endif /* _WIN32 */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Extra }, or forgotten $.
+l.1148   }
+          
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! You can't use `macro parameter character #' in math mode.
+l.1151 #
+        ifdef _WIN32
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.1154 #
+        else
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in math mode.
+l.1157 #
+        endif /* _WIN32 */
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Extra }, or forgotten $.
+l.1161 }
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+)
+! Emergency stop.
+<*> ...a.a /usr/lib/liblapack.a /usr/lib/libblas.a
+                                                  
+*** (job aborted, no legal \end found)
+
+Output written on sba.dvi (6 pages, 40424 bytes).

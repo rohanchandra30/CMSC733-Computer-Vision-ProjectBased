@@ -17,7 +17,7 @@ K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 if  ~exist('variables_new.mat','file')  
     [points, fpoints] = get_point_cell(Nimages);
     %[Points,F] = get_pointsandF_after_RANSAC(points);
-    [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints);
+    [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints, Nimages);
     save('variables_new.mat');
 else
     load variables_new.mat
@@ -45,7 +45,7 @@ figure;
 imshow(I2);hold on;
 plot(x2(:,1),x2(:,2),'r.');
 hold off;
-% dispMatchedFeatures(I1,I2,x1,x2, 'montage');
+dispMatchedFeatures(I1,I2,x1,x2, 'montage');
 
 %% % Part 5 Calculating Esssential Matrix and the 4 poses of the second Camera
 
@@ -89,11 +89,10 @@ Rset{2,1} = R;
 Cset{2,1} = C;
 Xset{1} = [];
 Xset{2} = X_opt;
-for i = 3:4
+for i = 3:Nimages
 
     id = intersect(indx{i-2, i-1}, find(cellfun(@(x) ~isempty(x), fpoints(:,i))));
     x = cell2mat(fpoints(id,i));
-    I = [];
     X_n = [];    
     for m = 1:length(id)
       t = find(indx{i-2, i-1} == id(m));

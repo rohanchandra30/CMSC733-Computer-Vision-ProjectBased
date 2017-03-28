@@ -21,11 +21,7 @@ K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 %% Part 4 Calculating point correspondences and Fundamental Matrix
 %
 
-<<<<<<< Updated upstream
 if  ~exist('variables_new.mat','file')
-=======
-if  exist('variables_new.mat','file')  
->>>>>>> Stashed changes
     [points, fpoints] = get_point_cell(Nimages);
     %[Points,F] = get_pointsandF_after_RANSAC(points);
     [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints, Nimages);
@@ -91,8 +87,6 @@ saveas(gcf, '../Report/2view_repo_img1.jpg');
 plotfunc(X_opt);
 saveas(gcf, '../Report/2view_topview.fig')
 
-%% Part 7 and 8
-
 Cset = cell(Nimages, 1);
 Rset = cell(Nimages, 1);
 Xset = cell(Nimages, 1);
@@ -102,6 +96,22 @@ Rset{2,1} = R;
 Cset{2,1} = C;
 Xset{1} = [];
 Xset{2} = X_opt;
+cP{1} = K*Rset{1,1}*[eye(3) -Cset{1,1}];
+cP{2} = K*Rset{2,1}*[eye(3) -Cset{2,1}];
+X = X_opt;
+%fpoints = fpoints(2:end,:);
+idx =indx{1,2};
+%m = zeros(size(fpoints,1), size(fpoints,2),2);
+measure(1:2*length(idx),Nimages) = 0;
+t = 1:2:2*length(idx);
+c = cell2mat(fpoints(idx,1));
+measure(1:2:2*length(idx),1) = c(:,1);
+measure(2:2:2*length(idx),1) = c(:,2);
+c = cell2mat(fpoints(idx,2));
+measure(1:2:2*length(idx),2) = c(:,1);
+measure(2:2:2*length(idx),2) = c(:,2);
+len = 2*length(idx);
+
 for i = 3:Nimages
     
     id = intersect(indx{i-2, i-1}, find(cellfun(@(x) ~isempty(x), fpoints(:,i))));
@@ -109,6 +119,8 @@ for i = 3:Nimages
     X_n = [];
     for m = 1:length(id)
         t = find(indx{i-2, i-1} == id(m));
+%       measure(2*(t-1)+1,i,:) = x(m,1);
+%       measure(2*t,i,:) = x(m,2);
         X_n = [X_n; Xset{i-1}(t,:)];
     end
     
@@ -133,9 +145,15 @@ for i = 3:Nimages
     indx{i-1,i} = indx{i-1,i}(id>0,:);
     
     Xset{i} = X_new;
-    
-    %Building traj
-    %traj = cell(N, 1);
+
+    measure(len+1 : n_len, Nimages) = 0;
+    measure(len+1:2:n_len , i-1) = x1(:,1);
+    measure(len+2:2:n_len , i-1) = x1(:,2);
+    measure(len+1:2:n_len , i) = x2(:,1);
+    measure(len+2:2:n_len , i) = x2(:,2);
+    len = n_len;
+    X = [X;X_new];
+
     [t1, t2] = testX(X_new, Cset{i-1}, Rset{i-1}, Rset{i}, Cset{i}, K);
     DisplayCorrespondence(I{i-1}, x1, t1);
     DisplayCorrespondence(I{i}, x2, t2);
@@ -147,7 +165,10 @@ for i = 3:Nimages
     DisplayCorrespondence(I1, x1, t1);
     path1 = sprintf('../Report/2view_repo_img1.jpg', i-1);
     saveas(gcf, path1);
+
+    cP{i} = K*Rset{i}*[eye(3) -Cset{i}];
     
+    [cP, X] = sba_wrapper(measure, cP, X, K);    
 end
 
 % Plot and save the top view for 6 images

@@ -21,7 +21,11 @@ K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 %% Part 4 Calculating point correspondences and Fundamental Matrix
 %
 
+<<<<<<< Updated upstream
 if  ~exist('variables_new.mat','file')
+=======
+if  exist('variables_new.mat','file')  
+>>>>>>> Stashed changes
     [points, fpoints] = get_point_cell(Nimages);
     %[Points,F] = get_pointsandF_after_RANSAC(points);
     [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints, Nimages);

@@ -5,7 +5,8 @@ function [C,R] = NonlinearPnP(X, x, K, C, R)
 % K: intrinsic parameter
 % C and R: for pose
 
-opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'MaxIter', 1e3, 'Display', 'none');
+% opts = optimoptions(@lsqnonlin, 'Algorithm', 'levenberg-marquardt', 'MaxIter', 1e3, 'Display', 'none');
+opts = optimoptions('lsqnonlin');
 
 %% Your code goes here
 RC0 = [R C];

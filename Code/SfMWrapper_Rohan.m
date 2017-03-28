@@ -10,19 +10,25 @@ I3 = im2double(imread('../Data/3.jpg'));
 I4 = im2double(imread('../Data/4.jpg'));
 I5 = im2double(imread('../Data/5.jpg'));
 I6 = im2double(imread('../Data/6.jpg'));
+I{1} = I1;
+I{2} = I2;
+I{3} = I3;
+I{4} = I4;
+I{5} = I5;
+I{6} = I6;
 K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
 %% Part 4 Calculating point correspondences and Fundamental Matrix
-% 
+%
 
-if  ~exist('variables_new.mat','file')  
+if  ~exist('variables_new.mat','file')
     [points, fpoints] = get_point_cell(Nimages);
     %[Points,F] = get_pointsandF_after_RANSAC(points);
     [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints, Nimages);
     save('variables_new.mat');
 else
     load variables_new.mat
-   
+    
 end
 
 
@@ -73,11 +79,13 @@ indx{1,2} = indx{1,2}(id>0,:);
 
 % Display reprojection points
 DisplayCorrespondence(I2, x2, t2);
+saveas(gcf, '../Report/2view_repo_img2.jpg');
 DisplayCorrespondence(I1, x1, t1);
+saveas(gcf, '../Report/2view_repo_img1.jpg');
 
-% Display point cloud and 3 camera poses
-Display3D({zeros(3,1), C}, {eye(3), R}, X_opt);
-
+% Plot and save the top view
+plotfunc(X_opt);
+saveas(gcf, '../Report/2view_topview.fig')
 
 %% Part 7 and 8
 
@@ -91,46 +99,54 @@ Cset{2,1} = C;
 Xset{1} = [];
 Xset{2} = X_opt;
 for i = 3:Nimages
-
+    
     id = intersect(indx{i-2, i-1}, find(cellfun(@(x) ~isempty(x), fpoints(:,i))));
     x = cell2mat(fpoints(id,i));
-    X_n = [];    
+    X_n = [];
     for m = 1:length(id)
-      t = find(indx{i-2, i-1} == id(m));
-      X_n = [X_n; Xset{i-1}(t,:)];  
+        t = find(indx{i-2, i-1} == id(m));
+        X_n = [X_n; Xset{i-1}(t,:)];
     end
     
     if length(x) < 6
         fprintf('Need atleast 6 correspondenses\n');
         continue;
-    end    
+    end
     [Cnew,Rnew] = PnPRANSAC(X_n, x, K);
     [Cnew, Rnew] = NonlinearPnP(X_n, x, K, Cnew, Rnew);
-
+    
     Cset{i,1} = Cnew;
     Rset{i,1} = Rnew;
     
     x1 = Points{i-1,i}(:,1:2);
     x2 = Points{i-1,i}(:,3:4);
-      
+    
     X_new = LinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2) ;
     [X_new, id] = NonlinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2, X_new);
     X_new = X_new(id>0, :);
     x1 = x1(id>0, :);
     x2 = x2(id>0, :);
     indx{i-1,i} = indx{i-1,i}(id>0,:);
-
+    
     Xset{i} = X_new;
     
     %Building traj
     %traj = cell(N, 1);
     [t1, t2] = testX(X_new, Cset{i-1}, Rset{i-1}, Rset{i}, Cset{i}, K);
-    DisplayCorrespondence(I2, x1, t1);
-    DisplayCorrespondence(I3, x2, t2);
-
-   
-    V = BuildVisibilityMatrix(Xset, Rset, Cset, Nimages_so_far);
-
-    %[Cset, Rset, X] = BundleAdjustment(Cset, Rset, X, K, traj, V);
+    DisplayCorrespondence(I{i-1}, x1, t1);
+    DisplayCorrespondence(I{i}, x2, t2);
+    
+    % Display reprojection points
+    DisplayCorrespondence(I2, x2, t2);
+    path2 = sprintf('../Report/2view_repo_img2.jpg', i);
+    saveas(gcf, path2);
+    DisplayCorrespondence(I1, x1, t1);
+    path1 = sprintf('../Report/2view_repo_img1.jpg', i-1);
+    saveas(gcf, path1);
+    
 end
 
+% Plot and save the top view for 6 images
+all_X = cell2mat(Xset);
+plotfunc(all_X);
+saveas(gcf, '../Report/multiple_view_topview.fig')

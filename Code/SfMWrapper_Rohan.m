@@ -118,10 +118,10 @@ for i = 3:Nimages
     x = cell2mat(fpoints(id,i));
     X_n = [];
     for m = 1:length(id)
-        t = find(indx{i-2, i-1} == id(m));
+      t = find(indx{i-2, i-1} == id(m));
 %       measure(2*(t-1)+1,i,:) = x(m,1);
 %       measure(2*t,i,:) = x(m,2);
-        X_n = [X_n; Xset{i-1}(t,:)];
+      X_n = [X_n; Xset{i-1}(t,:)];  
     end
     
     if length(x) < 6
@@ -141,34 +141,31 @@ for i = 3:Nimages
     [X_new, id] = NonlinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2, X_new);
     X_new = X_new(id>0, :);
     x1 = x1(id>0, :);
+    
     x2 = x2(id>0, :);
     indx{i-1,i} = indx{i-1,i}(id>0,:);
-    
-    Xset{i} = X_new;
-
+    n_len = len + 2* numel(indx{i-1,i}(:,:));
     measure(len+1 : n_len, Nimages) = 0;
     measure(len+1:2:n_len , i-1) = x1(:,1);
     measure(len+2:2:n_len , i-1) = x1(:,2);
     measure(len+1:2:n_len , i) = x2(:,1);
     measure(len+2:2:n_len , i) = x2(:,2);
     len = n_len;
+    Xset{i} = X_new;
     X = [X;X_new];
-
+    %Building traj
+    %traj = cell(N, 1);
     [t1, t2] = testX(X_new, Cset{i-1}, Rset{i-1}, Rset{i}, Cset{i}, K);
-    DisplayCorrespondence(I{i-1}, x1, t1);
-    DisplayCorrespondence(I{i}, x2, t2);
-    
-    % Display reprojection points
-    DisplayCorrespondence(I2, x2, t2);
-    path2 = sprintf('../Report/2view_repo_img2.jpg', i);
-    saveas(gcf, path2);
-    DisplayCorrespondence(I1, x1, t1);
-    path1 = sprintf('../Report/2view_repo_img1.jpg', i-1);
-    saveas(gcf, path1);
+    DisplayCorrespondence(I2, x1, t1);
+    DisplayCorrespondence(I3, x2, t2);
 
+   
+    %V = BuildVisibilityMatrix(Xset, Rset, Cset, i);
+    
     cP{i} = K*Rset{i}*[eye(3) -Cset{i}];
     
-    [cP, X] = sba_wrapper(measure, cP, X, K);    
+    [cP, X] = sba_wrapper(measure, cP, X, K); 
+    
 end
 
 % Plot and save the top view for 6 images

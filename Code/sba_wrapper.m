@@ -1,5 +1,5 @@
 function [cP, X] = sba_wrapper(measurements, cP, X, K)
-
+addpath('SBA_example/sba-1.6/matlab');
 % cP: camera poses
 % X: 3D points
 % measurements: 2D points
@@ -41,8 +41,7 @@ r0=reshape(r0', 1, numel(r0));
 cal = [K(1,1) K(1,2), K(1,3), K(2,2), K(2,3)];
 
 opts=[1E-1, 0, 0, 1E-5, 0.0];
-p0=[Mat2Vec(cams)' Mat2Vec(pts3D)'];
-
+p0=[reshape(cams', 1, nFrames*size(cams,2)) reshape(pts3D', 1, nFeatures*size(pts3D,2))];
 if isreal(p0) ~= 1
     k = 1;
 end

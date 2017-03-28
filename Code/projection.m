@@ -13,6 +13,10 @@ X = xyz';
 
 %% Code to fill
 % Project the 3D point to the camera to produce (u,v)
+x = P*X;
+x = x./x(:,3);
+u = x(:,1);
+v = x(:,2);
 
 % Return reprojection
 m(1) = u;

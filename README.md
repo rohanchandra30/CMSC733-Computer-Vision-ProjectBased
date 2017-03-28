@@ -21,3 +21,7 @@ After this script finishes, copy both Data.mat and datapoints.mat back to your l
 *WHENEVER PUSHING TO GIT, ALWAYS EXCLUDE DATA.MAT FROM PUSHING AS THE FILE SIZE EXCEEDS GITHUB LIMIT*
 
 
+
+
+
+The function plotfunc.m plots 3D points. I have resized the axis to within -50 to 50. You need to rotate it a bit to see the top view

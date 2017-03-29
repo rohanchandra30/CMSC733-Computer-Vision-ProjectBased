@@ -3,6 +3,9 @@ clc
 clear all
 close all
 
+addpath sba/matlab/
+
+
 Nimages = 6;
 I1 = im2double(imread('../Data/1.jpg'));
 I2 = im2double(imread('../Data/2.jpg'));
@@ -75,17 +78,18 @@ X_opt = X_opt(id>0, :);
 x1 = x1(id>0, :);
 x2 = x2(id>0, :);
 indx{1,2} = indx{1,2}(id>0,:);
-[t1, t2] = testX(X_opt, zeros(3, 1), eye(3), R, C, K);
+
+[t1, t2] = testX(X, zeros(3, 1), eye(3), R, C, K);
 
 % Display reprojection points
 DisplayCorrespondence(I2, x2, t2);
 saveas(gcf, '../Report/2view_repo_img2.jpg');
 DisplayCorrespondence(I1, x1, t1);
-saveas(gcf, '../Report/2view_repo_img1.jpg');
+saveas(gcf, '../Data/2view_repo_img1.jpg');
 
 % Plot and save the top view
 plotfunc(X_opt);
-saveas(gcf, '../Report/2view_topview.fig')
+saveas(gcf, '../Data/2view_topview.fig')
 
 Cset = cell(Nimages, 1);
 Rset = cell(Nimages, 1);
@@ -153,22 +157,25 @@ for i = 3:Nimages
     len = n_len;
     Xset{i} = X_new;
     X = [X;X_new];
-    %Building traj
-    %traj = cell(N, 1);
+   
+    
     [t1, t2] = testX(X_new, Cset{i-1}, Rset{i-1}, Rset{i}, Cset{i}, K);
     DisplayCorrespondence(I2, x1, t1);
     DisplayCorrespondence(I3, x2, t2);
 
-   
+  
     %V = BuildVisibilityMatrix(Xset, Rset, Cset, i);
     
     cP{i} = K*Rset{i}*[eye(3) -Cset{i}];
     
     [cP, X] = sba_wrapper(measure, cP, X, K); 
     
+    sbapath = sprintf('sba ran %d times', i-2);
+    disp(sbapath);
+    
 end
 
 % Plot and save the top view for 6 images
-all_X = cell2mat(Xset);
-plotfunc(all_X);
-saveas(gcf, '../Report/multiple_view_topview.fig')
+% all_X = cell2mat(Xset);
+% plotfunc(all_X);
+% saveas(gcf, '../Data/multiple_view_topview.fig')

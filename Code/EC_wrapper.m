@@ -19,9 +19,9 @@ end
 %% Detecting SIFT points and matching. We go straight to F matrix, E matrix detection after this.
 
 I1 = im2double(imread('../Data/EC1.jpg'));
-I1 = imrotate(I1, -90);
+% I1 = imrotate(I1, -90);
 I2 = im2double(imread('../Data/EC2.jpg'));
-I2 = imrotate(I2, -90);
+% I2 = imrotate(I2, -90);
 
 % Do Undistortion
 [J1, ~] = undistortImage(I1,cameraParams);
@@ -46,7 +46,7 @@ indexPairs = matchFeatures(f1,f2) ;
 x1 = vpts1(indexPairs(:,1));
 x2 = vpts2(indexPairs(:,2));
 x1 = x1.Location;
-x1 = x1.Location;
+x2 = x2.Location;
 x1 = double(x1);
 x2 = double(x2);
 

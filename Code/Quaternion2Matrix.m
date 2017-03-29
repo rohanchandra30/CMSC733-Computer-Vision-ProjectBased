@@ -3,6 +3,7 @@ function [ R ] = Quaternion2Matrix( qs )
 %   Detailed explanation goes here
     R = zeros(3, 3);
     % unit q
+    qs = qs';
     q = qs(:, 1);
     q = q./norm(q);
     qw = q(1);

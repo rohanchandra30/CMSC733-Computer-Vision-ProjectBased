@@ -1,4 +1,4 @@
-function [y1,y2,index,F] = GetInliersRANSAC_new(x1,x2, ind_x)
+function [y1,y2,index,F] = GetInliersRANSAC_new(x1,x2, ind_x, threshold)
 %% Input:
 % x1 and x2: Nx2 matrices whose row represents a correspondence.
 %% Output:
@@ -29,7 +29,7 @@ for i=1:1000
   
   S = [];
   for j=1:msize
-    if constraint(cell2mat(x2(ind_x(j),:)), f, cell2mat(x1(ind_x(j),:))) < 4e-3
+    if constraint(cell2mat(x2(ind_x(j),:)), f, cell2mat(x1(ind_x(j),:))) < threshold
         S = [S; ind_x(j)];
     end
   end

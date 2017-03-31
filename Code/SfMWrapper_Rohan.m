@@ -12,7 +12,7 @@ I2 = im2double(imread('../Data/2.jpg'));
 I3 = im2double(imread('../Data/3.jpg'));
 I4 = im2double(imread('../Data/4.jpg'));
 I5 = im2double(imread('../Data/5.jpg'));
-I6 = im2double(imread('../Data/6.jpg'));
+I6 = im2double(imread('../Data/6.jpg'));2
 I{1} = I1;
 I{2} = I2;
 I{3} = I3;
@@ -26,7 +26,7 @@ K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
 if  ~exist('variables_new.mat','file')
     [points, fpoints] = get_point_cell(Nimages);
-    %[Points,F] = get_pointsandF_after_RANSAC(points);
+   
     [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints, Nimages);
     save('variables_new.mat');
 else
@@ -34,18 +34,9 @@ else
     
 end
 
-
-
-% These are the points which we got after RANSAC. They cause the non-linear
-% function to hang. This means there is a problem in how we are getting x1
-% and x2
 x1 = Points{1,2}(:,1:2);
 x2 = Points{1,2}(:,3:4);
 
-% These are the x1, x2 from the coursera pipeline. These work. When using
-% these points, comment out line 16.
-% x1 = data.x1;
-% x2 = data.x2;
 
 figure;
 imshow(I1);hold on;
@@ -71,7 +62,8 @@ for i = 1:4
 end
 
 [C, R, X] = DisambiguateCameraPose(Cset, Rset, Xset);
-
+disp ('Now performing Non-Linear Triangulation..')
+pause(4)
 [X_opt, id] = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
 
 X_opt = X_opt(id>0, :);
@@ -79,7 +71,7 @@ x1 = x1(id>0, :);
 x2 = x2(id>0, :);
 indx{1,2} = indx{1,2}(id>0,:);
 
-[t1, t2] = testX(X, zeros(3, 1), eye(3), R, C, K);
+[t1, t2] = testX(X_opt, zeros(3, 1), eye(3), R, C, K);
 
 % Display reprojection points
 DisplayCorrespondence(I2, x2, t2);
@@ -122,10 +114,10 @@ for i = 3:Nimages
     x = cell2mat(fpoints(id,i));
     X_n = [];
     for m = 1:length(id)
-      t = find(indx{i-2, i-1} == id(m));
-%       measure(2*(t-1)+1,i,:) = x(m,1);
-%       measure(2*t,i,:) = x(m,2);
-      X_n = [X_n; Xset{i-1}(t,:)];  
+        t = find(indx{i-2, i-1} == id(m));
+        %       measure(2*(t-1)+1,i,:) = x(m,1);
+        %       measure(2*t,i,:) = x(m,2);
+        X_n = [X_n; Xset{i-1}(t,:)];
     end
     
     if length(x) < 6
@@ -133,6 +125,8 @@ for i = 3:Nimages
         continue;
     end
     [Cnew,Rnew] = PnPRANSAC(X_n, x, K);
+    disp ('Now performing Non-Linear PnP..')
+    pause(4)
     [Cnew, Rnew] = NonlinearPnP(X_n, x, K, Cnew, Rnew);
     
     Cset{i,1} = Cnew;
@@ -142,6 +136,8 @@ for i = 3:Nimages
     x2 = Points{i-1,i}(:,3:4);
     
     X_new = LinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2) ;
+    disp ('Now performing Non-Linear Triangulation..')
+    pause(4)
     [X_new, id] = NonlinearTriangulation(K, Cset{i-1}, Rset{i-1}, Cset{i}, Rset{i}, x1, x2, X_new);
     X_new = X_new(id>0, :);
     x1 = x1(id>0, :);
@@ -157,25 +153,34 @@ for i = 3:Nimages
     len = n_len;
     Xset{i} = X_new;
     X = [X;X_new];
-   
+    
     
     [t1, t2] = testX(X_new, Cset{i-1}, Rset{i-1}, Rset{i}, Cset{i}, K);
     DisplayCorrespondence(I2, x1, t1);
     DisplayCorrespondence(I3, x2, t2);
-
-  
-    %V = BuildVisibilityMatrix(Xset, Rset, Cset, i);
+    
     
     cP{i} = K*Rset{i}*[eye(3) -Cset{i}];
+    if i == 6
+        continue
+    end
     
-    [cP, X] = sba_wrapper(measure, cP, X, K); 
+    disp ('Now performing SBA..')
+    pause(4)
+    [cP, X] = sba_wrapper(measure, cP, X, K);
+    
+    rt = K\cP{i};
+    Rset{i} = rt(1:3,1:3);
+    Cset{i} = Rset{i}\rt(1:3,end);
+    
     
     sbapath = sprintf('sba ran %d times', i-2);
+    pause(4)
     disp(sbapath);
     
 end
 
 % Plot and save the top view for 6 images
-% all_X = cell2mat(Xset);
-% plotfunc(all_X);
-% saveas(gcf, '../Data/multiple_view_topview.fig')
+all_X = cell2mat(Xset);
+plotfunc(all_X);
+saveas(gcf, '../Data/multiple_view_topview.fig')

@@ -4,7 +4,13 @@ close all;
 
 % load Data.mat
 load Data_Rohan.mat
+if(~exist('Rohan_Data.mat','file'))
+    [x1, x2] = perform_sift();
+    save('datapoints.mat', 'x1', 'x2');
+else
 load datapoints.mat
+end
+
 K = K';
 I1 = im2double(imread('../Data/EC1_corrected.jpg'));
 I2 = im2double(imread('../Data/EC2_corrected.jpg'));

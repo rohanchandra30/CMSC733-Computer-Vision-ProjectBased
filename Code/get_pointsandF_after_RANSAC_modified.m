@@ -1,7 +1,7 @@
 function [Points,idx,F] = get_pointsandF_after_RANSAC_modified(points, Nimages)
 %Nimages = 6;
-% threshold = 4e-3;
-threshold = 8e-3;
+threshold = 4e-3;
+% threshold = 8e-3;
 
 for i=1:Nimages-1
     idxi = find(cellfun(@(x) ~isempty(x), points(:,i)));

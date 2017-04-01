@@ -12,7 +12,7 @@ I2 = im2double(imread('../Data/2.jpg'));
 I3 = im2double(imread('../Data/3.jpg'));
 I4 = im2double(imread('../Data/4.jpg'));
 I5 = im2double(imread('../Data/5.jpg'));
-I6 = im2double(imread('../Data/6.jpg'));2
+I6 = im2double(imread('../Data/6.jpg'));
 I{1} = I1;
 I{2} = I2;
 I{3} = I3;
@@ -26,7 +26,7 @@ K = [568.996140852 0 643.21055941; 0 568.988362396 477.982801038; 0 0 1];
 
 if  ~exist('variables_new.mat','file')
     [points, fpoints] = get_point_cell(Nimages);
-   
+    
     [Points,indx, F] = get_pointsandF_after_RANSAC_modified(fpoints, Nimages);
     save('variables_new.mat');
 else
@@ -34,10 +34,11 @@ else
     
 end
 
+% Point matches for first two images
 x1 = Points{1,2}(:,1:2);
 x2 = Points{1,2}(:,3:4);
 
-
+% Plotting feature points and dosplaying RANSAC results
 figure;
 imshow(I1);hold on;
 plot(x1(:,1),x1(:,2),'r.');
@@ -66,16 +67,18 @@ disp ('Now performing Non-Linear Triangulation..')
 pause(4)
 [X_opt, id] = NonlinearTriangulation(K, zeros(3,1), eye(3), C, R, x1, x2, X);
 
+% Pruning Algorithm
 X_opt = X_opt(id>0, :);
 x1 = x1(id>0, :);
 x2 = x2(id>0, :);
 indx{1,2} = indx{1,2}(id>0,:);
 
+% Testing Re=Projection
 [t1, t2] = testX(X_opt, zeros(3, 1), eye(3), R, C, K);
 
-% Display reprojection points
+% Display Reprojection points
 DisplayCorrespondence(I2, x2, t2);
-saveas(gcf, '../Report/2view_repo_img2.jpg');
+saveas(gcf, '../Data/2view_repo_img2.jpg');
 DisplayCorrespondence(I1, x1, t1);
 saveas(gcf, '../Data/2view_repo_img1.jpg');
 
@@ -83,6 +86,7 @@ saveas(gcf, '../Data/2view_repo_img1.jpg');
 plotfunc(X_opt);
 saveas(gcf, '../Data/2view_topview.fig')
 
+% Preparing for part 7 and 8
 Cset = cell(Nimages, 1);
 Rset = cell(Nimages, 1);
 Xset = cell(Nimages, 1);
@@ -108,6 +112,8 @@ measure(1:2:2*length(idx),2) = c(:,1);
 measure(2:2:2*length(idx),2) = c(:,2);
 len = 2*length(idx);
 
+%% Part 7 and 8 Pose Estimation and Bundle Adjustment
+
 for i = 3:Nimages
     
     id = intersect(indx{i-2, i-1}, find(cellfun(@(x) ~isempty(x), fpoints(:,i))));
@@ -115,8 +121,8 @@ for i = 3:Nimages
     X_n = [];
     for m = 1:length(id)
         t = find(indx{i-2, i-1} == id(m));
-        %       measure(2*(t-1)+1,i,:) = x(m,1);
-        %       measure(2*t,i,:) = x(m,2);
+        measure(2*(t-1)+1,i) = x(m,1);
+        measure(2*t,i) = x(m,2);
         X_n = [X_n; Xset{i-1}(t,:)];
     end
     
@@ -152,12 +158,14 @@ for i = 3:Nimages
     measure(len+2:2:n_len , i) = x2(:,2);
     len = n_len;
     Xset{i} = X_new;
+    plotfunc(X_new);
+    pause(3)
     X = [X;X_new];
     
-    
+%     Testing Re-Projection
     [t1, t2] = testX(X_new, Cset{i-1}, Rset{i-1}, Rset{i}, Cset{i}, K);
-    DisplayCorrespondence(I2, x1, t1);
-    DisplayCorrespondence(I3, x2, t2);
+    DisplayCorrespondence(I{i-1}, x1, t1);
+    DisplayCorrespondence(I{i}, x2, t2);
     
     
     cP{i} = K*Rset{i}*[eye(3) -Cset{i}];
@@ -167,6 +175,8 @@ for i = 3:Nimages
     
     disp ('Now performing SBA..')
     pause(4)
+    
+%     Bundle Adjustment using SBA package
     [cP, X] = sba_wrapper(measure, cP, X, K);
     
     rt = K\cP{i};

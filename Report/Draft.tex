@@ -155,7 +155,7 @@
 
 
 
-
+\usepackage{float}
 
 % *** MATH PACKAGES ***
 %
@@ -191,6 +191,7 @@
 % Also of interest may be the (relatively newer and more customizable)
 % algorithmicx.sty package by Szasz Janos:
 % http://www.ctan.org/pkg/algorithmicx
+\usepackage{verbatim}
 
 
 
@@ -320,7 +321,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{CMSC755-Project 5: Structure From Motion}
+\title{CMSC733-Project 3: Structure From Motion}
 
 
 % author names and affiliations
@@ -368,7 +369,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Structure from Motion from multiple views using bundle adjustment.
+Structure from Motion from multiple views using bundle adjustment. We used a different solver algorithm for non-linear triangulation. We also iclude a pruning algorithm after non linear triangulation that helps in reducing re-projection error.
 \end{abstract}
 
 % no keywords
@@ -386,8 +387,18 @@ Structure from Motion from multiple views using bundle adjustment.
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
+\section{VisualSfM Output}
+
+Following is the attached result from visual sfm. 
 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7in]{output.jpg}
+\caption{Visual SfM output}
+\label{fig_sim}
+\end{figure}
+As you can see, the results from the software are not perfect. Our algorithm outperforms the result we get from the software.
 \section{Two View Reconstruction}
 
 We perform the following algorithm:
@@ -397,9 +408,9 @@ We perform the following algorithm:
 
 Raw Feature Matching:
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=4in]{After_RANSAC.jpg}
+\includegraphics[width=3in]{After_RANSAC.jpg}
 \caption{Feature matching before RANSAC}
 \label{fig_sim}
 \end{figure}
@@ -407,49 +418,150 @@ Raw Feature Matching:
 After RANSAC:
 
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=4in]{RANSAC.jpg}
+\includegraphics[width=3in]{RANSAC.jpg}
 \caption{Feature matching after RANSAC}
-\label{fig_sim}
+\label{fig_sim1}
 \end{figure}
+
+
+
 
 \subsection{Fundamental Matrix Computation}
+F =
+\[
+\begin{bmatrix}
+    -1.8459e^{-07} & -7.8618e^{-6} & .0024\\
+     8.9358e^{-06} & 1.2166e^{-07} & -0.0056\\
+     -0.0035 & 0.0039 & 1\\
+ \end{bmatrix}
+\]
+\subsection{Essential Matrix Computation}
 
-\subsection{Essential Matrix and Four Camera Poses}
+
+E =
+\[
+\begin{bmatrix}
+    -0.0119 & -0.9265 & -0.2957\\
+     0.9906 & 0.0062 & 0.0425\\
+     0.1305 & -0.2226 & -0.0656\\
+ \end{bmatrix}
+\]
+
+
 
 \subsection{2D Reprojection After Non - Linear Triangulation}
-\begin{figure}[!h]
+
+This was the first roadblock that we encountered. For a long time we were getting a huge reprojection error. This was solved by fixing two things:\\
+
+The first problem that I noticed was that our fundamental matrix constraint was much larger than $\epsilon$. As you know, $x^TFx^{'} = 0$ ensures that the points $x$ and $x^{'}$ lie on the epipolar plane and project to a 3D point. The problem was that in addition to the corrections suggested in the pdf, we were required to normalize the fundamental matrix by setting the last value to one. \\
+
+The second fix that we made to our code was to do efficient data processing.\\
+
+After getting mixed re-projection results, we realized we needed to filter our results. We thus only retained points that converged according to our non linear optimization.
+
+\begin{figure}[H]
 \centering
-\includegraphics[width=4in]{2view_repo_img1.jpg}
+\includegraphics[width=3in]{2view_repo_img1.jpg}
 \label{fig_sim}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=4in]{2view_repo_img2.jpg}
+\includegraphics[width=3in]{2view_repo_img2.jpg}
 \caption{3D reprojection of 2D points. Blue indicate original points. Green indicate projected points. Error is displayed at the top}
 \label{fig_sim}
 \end{figure}
 
+An interesting observation is that using the Levensberg-Marquardt algorithm on a linux machine generated sparse 3D points after the pruning step. This may be because due to some hardware configuration or alternate parameters, the solution set converged for very less points and our pruning algorithm rejects those points.\\
+
+In order to get around this particular problem, we used the SNOPT solver in the TOMLAB solver library which gave significantly better results.
 
 
 \subsection{3D visualiztion of Linear and Non Linear Triangulated Points}
+Figure 5 shows the initial results of our algorithm. \\
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=4in]{2view_topview.jpg}
 \caption{Top View Reconstruction for 2 views}
 \label{fig_sim}
 \end{figure}
 
-\begin{figure}[!h]
+The two view reconstruction is sparse. Following this stage, we register the rest of the images in succession using pose estimation and apply bundle adjustment to get the following reconstruction.\\
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=4in]{multiple_view_topview.jpg}
-\caption{Top View Reconstruction for 6 views}
+\caption{Top View Reconstruction after Bundle Adjustment}
 \label{fig_sim}
 \end{figure}
 
+The dense point cloud is a serious improvement over the sparse one.\\
+
+It is worth mentioning that the bundle adjustment package was not easy to install and use. It took several days of painstaking software engineering to get the package to work. Due to compatibility issues with Mac computers, we installed SBA (the bundle adjustment package) on a linux machine.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{ObliqueView.jpg}
+\caption{Oblique View Reconstruction after Bundle Adjustment}
+\label{fig_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=3in]{SideView.jpg}
+\caption{Side View Reconstruction after Bundle Adjustment}
+\label{fig_sim}
+\end{figure}
+
+
+
+\section{Extra Credit}
+
+We used my iPhone 4S to capture the following images for extra credit:\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{laptops_EC.jpg}
+\caption{Images for Extra Credit}
+\label{fig_sim}
+\end{figure}
+
+Selection of relevant and proper images is extremely important for performing reconstruction. Relevance would ensure we recover a structure that can be recognized easily from the point cloud and proper entails using images with 'good' feature points. It took us several tries to gather the images that we were satisfied with.\\
+
+After securing the images that we wanted, we used the vl\_feat library to perform feature detection and matching. We found that the vl\_feat library considerably outperforms the SURF points from MATLAB. We procured over 2000 matching points from the former while obtaining only 400 from the latter.\\
+
+The results of RANSAC can be shown below:\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=3in]{laptop_ransac.jpg}
+\caption{RANSAC after feature matching}
+\label{fig_sim}
+\end{figure}
+
+Apart from feature matching, we were required to calibrate the camera before taking images. In our project, we were given both the point matches and the camera matrix, K. In order to calibrate the camera and calculate the intrinsic matrix, we followed the steps in homework 1 of CMSC 733 where we use a checkerboard of square size 21.5 mm. Following calibration, correction was made for lens distortion.\\
+
+After the required processing steps of calibration and feature matching, we apply our algorithm for calculating triangulated and refined 3D points. The re-projection error is shown in fig. 11. The blue points(under the green) indicate the original points and the green points indicate the re-projected points. The fact that you see so very little blue is an indicator that our non-linear triangulation worked perfectly.\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=5in]{laptop_repo1.jpg}
+\caption{3D reprojection of 2D points. Blue indicate original points. Green indicate projected points. Error is displayed at the top}
+\label{fig_sim}
+\end{figure}
+
+For the purposes of demonstrating our algorithm we show the front view of the reconstructed laptop. Notice the right side in fig. 12. The two red columns and the 3 little red clouds of points on top correspond to their green counterparts in fig. 11. The lines of code on the laptop screen are also quite visible in our experiment.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{laptop_front.jpg}
+\caption{Front View. Notice the familiarity}
+\label{fig_sim}
+\end{figure}
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
 % For figures, \caption should occur after the \includegraphics.
